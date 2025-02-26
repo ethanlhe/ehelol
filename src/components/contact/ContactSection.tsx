@@ -12,13 +12,13 @@ export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
     toast.success("Email copied to clipboard!");
   };
 
-  const buttonClasses = `py-3 px-6 rounded font-mono text-sm w-full ${
+  const buttonClasses = `py-2 px-4 rounded font-mono text-sm w-full text-center ${
     theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
   } transition-colors`;
 
   return (
-    <div className={boxClasses}>
-      <h2 className="font-mono mb-4">contact me</h2>
+    <div className={`${boxClasses} flex flex-col justify-between`}>
+      <h2 className="font-mono">contact me</h2>
       <div className="grid grid-cols-3 gap-3">
         <button
           onClick={handleEmailClick}
