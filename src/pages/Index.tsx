@@ -80,7 +80,6 @@ const Index = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Preload images
     const images = [
       "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
       "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
@@ -148,7 +147,7 @@ const Index = () => {
                 <span className="font-mono">projects</span>
                 <span className={`text-xs px-2 py-1 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
               </div>
-              <Tooltip delayDuration={0}>
+              <Tooltip>
                 <TooltipTrigger asChild>
                   <button 
                     onClick={() => navigate('/portfolio')}
@@ -162,8 +161,10 @@ const Index = () => {
                   </button>
                 </TooltipTrigger>
                 <TooltipContent 
-                  side="left" 
-                  sideOffset={40}
+                  side="right" 
+                  align="start"
+                  alignOffset={-50}
+                  sideOffset={20}
                   className="bg-white/80 dark:bg-black/80 backdrop-blur-md border-none z-[9999] shadow-xl animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
                 >
                   <ProjectPreview />
