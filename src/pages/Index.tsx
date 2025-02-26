@@ -36,8 +36,8 @@ const Index = () => {
 
   return (
     <TooltipProvider delayDuration={0}>
-      <main className={`min-h-screen p-8 md:p-16 flex items-center transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
-        <div className="max-w-4xl mx-auto space-y-2">
+      <main className={`min-h-screen p-8 md:p-16 flex items-center justify-center transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
+        <div className="w-full max-w-4xl space-y-2">
           {/* Top Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <div className="h-[200px]">

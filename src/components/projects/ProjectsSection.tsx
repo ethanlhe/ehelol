@@ -59,7 +59,7 @@ export const ProjectsSection = ({ theme, boxClasses }: ProjectsSectionProps) => 
   return (
     <div className={`${boxClasses} flex flex-col justify-between`}>
       <div className="flex items-center justify-between">
-        <span className="font-mono">portfolio</span>
+        <span className="font-mono">projects</span>
         <span className={`font-mono text-xs px-2 py-1 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
       </div>
       <Tooltip>
@@ -76,7 +76,7 @@ export const ProjectsSection = ({ theme, boxClasses }: ProjectsSectionProps) => 
           </button>
         </TooltipTrigger>
         <TooltipContent 
-          side="left" 
+          side="bottom" 
           align="center"
           sideOffset={24}
           className="bg-white/80 dark:bg-black/80 backdrop-blur-md border-none shadow-xl animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
