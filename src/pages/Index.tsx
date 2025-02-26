@@ -1,11 +1,19 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Index = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   return (
-    <main className="min-h-screen p-8 md:p-16 bg-background text-foreground">
+    <main className={`min-h-screen p-8 md:p-16 transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Column */}
         <div className="space-y-8">
@@ -27,13 +35,13 @@ const Index = () => {
           <div className="space-y-4">
             <span className="font-mono">experience</span>
             <div className="grid grid-cols-2 gap-4">
-              <button className="bg-secondary py-2 px-4 rounded font-mono text-sm">render</button>
-              <button className="bg-secondary py-2 px-4 rounded font-mono text-sm">vimbly</button>
-              <button className="bg-secondary py-2 px-4 rounded font-mono text-sm">codelab</button>
-              <button className="bg-secondary py-2 px-4 rounded font-mono text-sm">castle hill</button>
+              <button className={`py-2 px-4 rounded font-mono text-sm ${theme === "dark" ? "bg-[#222222] hover:bg-[#333333]" : "bg-[#f4f4f4] hover:bg-[#e4e4e4]"} transition-colors`}>render</button>
+              <button className={`py-2 px-4 rounded font-mono text-sm ${theme === "dark" ? "bg-[#222222] hover:bg-[#333333]" : "bg-[#f4f4f4] hover:bg-[#e4e4e4]"} transition-colors`}>vimbly</button>
+              <button className={`py-2 px-4 rounded font-mono text-sm ${theme === "dark" ? "bg-[#222222] hover:bg-[#333333]" : "bg-[#f4f4f4] hover:bg-[#e4e4e4]"} transition-colors`}>codelab</button>
+              <button className={`py-2 px-4 rounded font-mono text-sm ${theme === "dark" ? "bg-[#222222] hover:bg-[#333333]" : "bg-[#f4f4f4] hover:bg-[#e4e4e4]"} transition-colors`}>castle hill</button>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground font-mono">2+ years</span>
+              <span className={`text-sm font-mono ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>2+ years</span>
             </div>
           </div>
 
@@ -41,12 +49,11 @@ const Index = () => {
           <div className="space-y-4">
             <span className="font-mono">technical skills</span>
             <div className="flex flex-wrap gap-2">
-              <span className="bg-secondary px-2 py-1 rounded text-xs font-mono">typescript</span>
-              <span className="bg-secondary px-2 py-1 rounded text-xs font-mono">react</span>
-              <span className="bg-secondary px-2 py-1 rounded text-xs font-mono">next.js</span>
-              <span className="bg-secondary px-2 py-1 rounded text-xs font-mono">python</span>
-              <span className="bg-secondary px-2 py-1 rounded text-xs font-mono">aws</span>
-              <span className="bg-secondary px-2 py-1 rounded text-xs font-mono">node.js</span>
+              {["typescript", "react", "next.js", "python", "aws", "node.js"].map((skill) => (
+                <span key={skill} className={`px-2 py-1 rounded text-xs font-mono ${theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"}`}>
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -55,7 +62,7 @@ const Index = () => {
         <div className="space-y-8">
           <div className="space-y-4">
             <h2 className="font-mono">about me</h2>
-            <p className="text-muted-foreground font-mono leading-relaxed">
+            <p className={`font-mono leading-relaxed ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
               passionate software engineer with experience in full-stack development, cloud architecture, and AI/ML applications.
             </p>
             <p className="font-mono">davis, california based</p>
@@ -65,15 +72,15 @@ const Index = () => {
           <div className="space-y-4">
             <h2 className="font-mono">featured projects</h2>
             <div className="space-y-4">
-              <div className="bg-secondary p-4 rounded">
+              <div className={`p-4 rounded ${theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"}`}>
                 <h3 className="font-mono mb-2">BSCI Labs Subway Map</h3>
-                <p className="text-sm text-muted-foreground font-mono">
+                <p className={`text-sm font-mono ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
                   git visualization tool built with react.js and d3.js
                 </p>
               </div>
-              <div className="bg-secondary p-4 rounded">
+              <div className={`p-4 rounded ${theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"}`}>
                 <h3 className="font-mono mb-2">Schedule Map</h3>
-                <p className="text-sm text-muted-foreground font-mono">
+                <p className={`text-sm font-mono ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
                   chrome extension for UC Davis students
                 </p>
               </div>
@@ -84,15 +91,23 @@ const Index = () => {
           <div className="space-y-4">
             <h2 className="font-mono">contact me</h2>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:ethanhe0716@gmail.com" className="bg-secondary py-2 px-4 rounded font-mono text-sm hover:bg-secondary/80 transition-colors">
-                email
-              </a>
-              <a href="https://linkedin.com/in/ethanlhe" target="_blank" rel="noopener noreferrer" className="bg-secondary py-2 px-4 rounded font-mono text-sm hover:bg-secondary/80 transition-colors">
-                linkedin
-              </a>
-              <a href="https://github.com/ethanlhe" target="_blank" rel="noopener noreferrer" className="bg-secondary py-2 px-4 rounded font-mono text-sm hover:bg-secondary/80 transition-colors">
-                github
-              </a>
+              {[
+                { label: "email", href: "mailto:ethanhe0716@gmail.com" },
+                { label: "linkedin", href: "https://linkedin.com/in/ethanlhe" },
+                { label: "github", href: "https://github.com/ethanlhe" }
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.label !== "email" ? "_blank" : undefined}
+                  rel={link.label !== "email" ? "noopener noreferrer" : undefined}
+                  className={`py-2 px-4 rounded font-mono text-sm ${
+                    theme === "dark" ? "bg-[#222222] hover:bg-[#333333]" : "bg-[#f4f4f4] hover:bg-[#e4e4e4]"
+                  } transition-colors`}
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -102,13 +117,21 @@ const Index = () => {
             <div className="flex items-center gap-4">
               <button 
                 onClick={() => setTheme("light")}
-                className={`py-2 px-4 rounded font-mono text-sm ${theme === 'light' ? 'bg-foreground text-background' : 'bg-secondary'}`}
+                className={`py-2 px-4 rounded font-mono text-sm transition-colors ${
+                  theme === 'light' 
+                    ? 'bg-black text-white' 
+                    : theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"
+                }`}
               >
                 light
               </button>
               <button 
                 onClick={() => setTheme("dark")}
-                className={`py-2 px-4 rounded font-mono text-sm ${theme === 'dark' ? 'bg-foreground text-background' : 'bg-secondary'}`}
+                className={`py-2 px-4 rounded font-mono text-sm transition-colors ${
+                  theme === 'dark' 
+                    ? 'bg-white text-black' 
+                    : theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"
+                }`}
               >
                 dark
               </button>
