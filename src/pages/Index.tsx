@@ -54,6 +54,7 @@ const ExperienceItem = ({ company, description, index, link }: { company: string
       <TooltipContent 
         side={isBottomRow ? "bottom" : "top"}
         className="bg-white dark:bg-[#222222] border-none max-w-[200px] z-[9999]"
+        style={{ zIndex: 9999 }}
       >
         <p className="text-xs font-mono">{description}</p>
       </TooltipContent>
