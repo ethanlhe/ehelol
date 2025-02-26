@@ -6,11 +6,11 @@ const Portfolio = () => {
   
   const projects = [
     {
-      title: "AI Chat Application",
-      description: "A real-time chat application powered by OpenAI's GPT-3, built with React and Node.js",
-      tech: ["React", "Node.js", "OpenAI", "WebSocket"],
-      link: "https://github.com/ethanlhe",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+      title: "BlockScience Labs Subway Map",
+      description: "Led the development of a Git visualization tool that helps users understand repository changes through an intuitive subway-map interface. Built with React, Redux, and the GitHub API, this tool simplifies version control visualization for users with varying levels of Git experience.",
+      tech: ["React", "Redux", "PostgreSQL", "GitHub API", "Octokit"],
+      link: "https://codelabdavis.medium.com/blockscience-labs-subway-map-7b58e3b6b485",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
     },
     {
       title: "E-commerce Platform",
