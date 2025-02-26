@@ -11,11 +11,13 @@ const ProjectPreview = () => (
         src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
         alt="AI Chat Application"
         className="w-full h-20 object-cover rounded"
+        loading="eager"
       />
       <img 
         src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
         alt="E-commerce Platform"
         className="w-full h-20 object-cover rounded"
+        loading="eager"
       />
     </div>
     <p className="text-xs font-mono text-center">hover to preview projects</p>
@@ -27,6 +29,17 @@ const Index = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Preload images
+    const images = [
+      "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+    ];
+    
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -73,7 +86,7 @@ const Index = () => {
                   view
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="right" className="bg-white dark:bg-[#222222] border-none">
+              <TooltipContent side="left" className="bg-white dark:bg-[#222222] border-none">
                 <ProjectPreview />
               </TooltipContent>
             </Tooltip>
