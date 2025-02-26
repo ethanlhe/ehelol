@@ -135,7 +135,7 @@ const Index = () => {
                 className={`py-2 px-4 rounded font-mono text-sm transition-colors ${
                   theme === "light" 
                     ? "bg-black text-white" 
-                    : "bg-white text-black hover:bg-gray-100"
+                    : "bg-[#333333] text-white hover:bg-[#444444]"
                 }`}
               >
                 light
