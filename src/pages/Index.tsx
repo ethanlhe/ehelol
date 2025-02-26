@@ -48,8 +48,11 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Middle Row - Blog and Contact */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+          {/* Middle Row - Projects, Blog and Contact */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="h-[135px]">
+              <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+            </div>
             <div className="h-[135px]">
               <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
