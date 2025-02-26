@@ -11,11 +11,6 @@ import { ThemeSection } from "@/components/theme/ThemeSection";
 
 const Index = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
-  const [randomTheme, setRandomTheme] = useState<{
-    background: string;
-    foreground: string;
-    accent: string;
-  } | null>(null);
 
   useEffect(() => {
     const images = [
@@ -36,24 +31,12 @@ const Index = () => {
   }, [theme]);
 
   const boxClasses = `p-3 rounded-lg outline outline-0 outline-black/10 dark:outline-white/10 hover:outline-[3px] hover:outline-offset-[-3px] transition-[outline-width,outline-offset] duration-75 ${
-    randomTheme 
-      ? "bg-[var(--random-accent)]" 
-      : theme === "dark" 
-        ? "bg-[#222222]" 
-        : "bg-[#f4f4f4]"
+    theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"
   }`;
 
   return (
     <TooltipProvider delayDuration={0}>
-      <main 
-        className={`min-h-screen p-8 md:p-16 flex items-center transition-colors duration-300 ${
-          randomTheme
-            ? "bg-[var(--random-background)] text-[var(--random-foreground)]"
-            : theme === "dark" 
-              ? "bg-[#111111] text-white" 
-              : "bg-white text-black"
-        }`}
-      >
+      <main className={`min-h-screen p-8 md:p-16 flex items-center transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
         <div className="relative w-full flex justify-center">
           <div className="w-full md:w-auto space-y-1">
             {/* Mobile Layout - All sections stacked */}
@@ -77,13 +60,7 @@ const Index = () => {
                 <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
               <div className="h-[8.5rem]">
-                <ThemeSection 
-                  theme={theme} 
-                  boxClasses={`${boxClasses} h-full`} 
-                  setTheme={setTheme}
-                  randomTheme={randomTheme}
-                  setRandomTheme={setRandomTheme}
-                />
+                <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
               </div>
             </div>
 
@@ -120,13 +97,7 @@ const Index = () => {
                   <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
                 <div className="h-[8.5rem] w-[17.2rem]">
-                  <ThemeSection 
-                    theme={theme} 
-                    boxClasses={`${boxClasses} h-full`} 
-                    setTheme={setTheme}
-                    randomTheme={randomTheme}
-                    setRandomTheme={setRandomTheme}
-                  />
+                  <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
                 </div>
               </div>
             </div>
