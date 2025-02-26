@@ -1,4 +1,3 @@
-
 interface ThemeSectionProps {
   isDark: boolean;
   setIsDark: (isDark: boolean) => void;
@@ -7,7 +6,7 @@ interface ThemeSectionProps {
   boxClasses: string;
 }
 
-// Predefined harmonious color schemes
+// Predefined harmonious color schemes with improved dark mode contrast
 const colorSchemes = [
   {
     light: {
@@ -16,8 +15,8 @@ const colorSchemes = [
       text: "#212529"
     },
     dark: {
-      primary: "#212529",
-      secondary: "#343A40",
+      primary: "#1A1F2C",
+      secondary: "#2A303C",
       text: "#F8F9FA"
     }
   },
@@ -28,8 +27,8 @@ const colorSchemes = [
       text: "#44337A"
     },
     dark: {
-      primary: "#44337A",
-      secondary: "#553C9A",
+      primary: "#322659",
+      secondary: "#44337A",
       text: "#E9D8FD"
     }
   },
@@ -40,9 +39,9 @@ const colorSchemes = [
       text: "#087F5B"
     },
     dark: {
-      primary: "#087F5B",
-      secondary: "#0C9B72",
-      text: "#E6FCF5"
+      primary: "#065F46",
+      secondary: "#047857",
+      text: "#ECFDF5"
     }
   },
   {
@@ -52,9 +51,9 @@ const colorSchemes = [
       text: "#744210"
     },
     dark: {
-      primary: "#744210",
-      secondary: "#975A16",
-      text: "#FFF3BF"
+      primary: "#633112",
+      secondary: "#854D0E",
+      text: "#FEF9C3"
     }
   },
   {
@@ -64,9 +63,9 @@ const colorSchemes = [
       text: "#3C366B"
     },
     dark: {
-      primary: "#3C366B",
-      secondary: "#4C51BF",
-      text: "#EBF4FF"
+      primary: "#312E81",
+      secondary: "#3730A3",
+      text: "#E0E7FF"
     }
   }
 ];
