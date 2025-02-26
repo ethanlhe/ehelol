@@ -36,7 +36,7 @@ const Index = () => {
 
   return (
     <TooltipProvider delayDuration={0}>
-      <main className={`min-h-screen p-8 md:p-16 transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
+      <main className={`min-h-screen p-8 md:p-16 flex items-center transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
         <div className="max-w-4xl mx-auto space-y-2">
           {/* Top Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -64,7 +64,7 @@ const Index = () => {
               <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
             <div className="h-[156px]">
-              <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+              <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
             </div>
           </div>
         </div>
