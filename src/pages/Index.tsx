@@ -37,39 +37,43 @@ const Index = () => {
   return (
     <TooltipProvider delayDuration={0}>
       <main className={`min-h-screen p-8 md:p-16 flex items-center justify-center transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
-        <div className="w-full max-w-4xl space-y-2">
-          {/* Top Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="h-[200px]">
-              <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
-            </div>
-            <div className="h-[200px]">
-              <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
-            </div>
-          </div>
-
-          {/* Middle Row - Projects, Blog and Contact */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-            <div className="relative md:col-span-1">
-              <div className="h-[135px]">
-                <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+        <div className="relative w-[calc(100%+350px)] max-w-[1400px]">
+          <div className="flex justify-center">
+            <div className="relative w-full max-w-4xl">
+              {/* Top Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="h-[200px]">
+                  <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                </div>
+                <div className="h-[200px]">
+                  <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                </div>
               </div>
-              <div className="absolute left-0 top-0 -translate-x-[calc(100%+8px)] w-full h-[135px] hidden md:block">
-                <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
-              </div>
-            </div>
-            <div className="col-span-1 md:col-span-2 h-[135px]">
-              <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
-            </div>
-          </div>
 
-          {/* Bottom Row - Experience and Theme */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-            <div className="col-span-2 h-[135px]">
-              <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
-            </div>
-            <div className="h-[135px]">
-              <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
+              {/* Middle Row - Projects, Blog and Contact */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2">
+                <div className="relative md:col-span-1">
+                  <div className="h-[135px]">
+                    <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                  </div>
+                  <div className="absolute left-0 top-0 -translate-x-[calc(100%+8px)] w-full h-[135px] hidden md:block">
+                    <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                  </div>
+                </div>
+                <div className="col-span-1 md:col-span-2 h-[135px]">
+                  <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                </div>
+              </div>
+
+              {/* Bottom Row - Experience and Theme */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2">
+                <div className="col-span-2 h-[135px]">
+                  <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                </div>
+                <div className="h-[135px]">
+                  <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
