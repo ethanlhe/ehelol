@@ -12,15 +12,17 @@ export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
     toast.success("Email copied to clipboard!");
   };
 
+  const buttonClasses = `py-3 px-6 rounded font-mono text-sm w-full ${
+    theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
+  } transition-colors`;
+
   return (
     <div className={boxClasses}>
-      <h2 className="font-mono mb-3">contact me</h2>
-      <div className="flex flex-wrap gap-3">
+      <h2 className="font-mono mb-4">contact me</h2>
+      <div className="grid grid-cols-2 gap-3">
         <button
           onClick={handleEmailClick}
-          className={`py-2 px-4 rounded font-mono text-sm ${
-            theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
-          } transition-colors`}
+          className={buttonClasses}
         >
           email
         </button>
@@ -28,21 +30,9 @@ export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
           href="https://www.linkedin.com/in/ethanlhe/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`py-2 px-4 rounded font-mono text-sm ${
-            theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
-          } transition-colors`}
+          className={buttonClasses}
         >
           linkedin
-        </a>
-        <a
-          href="https://github.com/ethanlhe"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`py-2 px-4 rounded font-mono text-sm ${
-            theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
-          } transition-colors`}
-        >
-          github
         </a>
       </div>
     </div>

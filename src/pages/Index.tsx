@@ -43,9 +43,13 @@ const Index = () => {
             <div className="h-[200px]">
               <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
-            <div className="grid grid-cols-1 gap-2">
-              <BlogSection theme={theme} boxClasses={boxClasses} />
-              <ExperienceSection theme={theme} boxClasses={`${boxClasses} min-h-[120px]`} />
+            <div className="grid grid-cols-3 gap-2">
+              <div className="col-span-1">
+                <BlogSection theme={theme} boxClasses={boxClasses} />
+              </div>
+              <div className="col-span-2">
+                <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+              </div>
             </div>
           </div>
 
@@ -54,9 +58,13 @@ const Index = () => {
             <div className="h-[200px]">
               <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
-            <div className="grid grid-cols-1 gap-2">
-              <ContactSection theme={theme} boxClasses={`${boxClasses} min-h-[120px]`} />
-              <ThemeSection theme={theme} boxClasses={boxClasses} setTheme={setTheme} />
+            <div className="grid grid-cols-3 gap-2">
+              <div className="col-span-2">
+                <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+              </div>
+              <div className="col-span-1">
+                <ThemeSection theme={theme} boxClasses={boxClasses} setTheme={setTheme} />
+              </div>
             </div>
           </div>
         </div>
