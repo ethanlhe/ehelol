@@ -12,7 +12,7 @@ export const ThemeSection = ({ theme, boxClasses, setTheme }: ThemeSectionProps)
       <div className="flex items-center gap-3">
         <button 
           onClick={() => setTheme("light")}
-          className={`py-3 px-6 rounded-lg font-mono text-base transition-colors text-center flex-1 ${
+          className={`py-2 px-4 rounded-lg font-mono text-sm transition-colors text-center ${
             theme === "light" 
               ? "bg-black text-white" 
               : "bg-[#333333] text-white hover:bg-[#444444]"
@@ -22,7 +22,7 @@ export const ThemeSection = ({ theme, boxClasses, setTheme }: ThemeSectionProps)
         </button>
         <button 
           onClick={() => setTheme("dark")}
-          className={`py-3 px-6 rounded-lg font-mono text-base transition-colors text-center flex-1 ${
+          className={`py-2 px-4 rounded-lg font-mono text-sm transition-colors text-center ${
             theme === "dark" 
               ? "bg-white text-black" 
               : "bg-white text-black hover:bg-gray-100"

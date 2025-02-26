@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { NameSection } from "@/components/layout/NameSection";
@@ -86,17 +85,17 @@ const Index = () => {
                     <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                   </div>
                 </div>
-                <div className="ml-1 w-[290px] h-[135px]">
+                <div className="ml-1 flex-1 h-[135px]">
                   <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
               </div>
 
               {/* Bottom Row - Experience and Theme */}
-              <div className="mt-1 flex gap-1">
-                <div className="w-[290px] h-[135px]">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-1">
+                <div className="col-span-2 h-[135px]">
                   <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
-                <div className="h-[135px] flex-1">
+                <div className="h-[135px] w-[275px]">
                   <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
                 </div>
               </div>
