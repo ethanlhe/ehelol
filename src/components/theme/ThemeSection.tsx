@@ -125,29 +125,31 @@ export const ThemeSection = ({ isDark, setIsDark, randomTheme, setRandomTheme, b
       <div className="flex flex-col h-full">
         <span className="font-mono">theme</span>
         <div className="flex-grow flex flex-col justify-between mt-2">
-          <div className="flex items-center justify-end gap-2">
-            <button
-              onClick={handleRandomTheme}
-              className={`p-2 rounded-lg transition-all duration-150 transform hover:scale-[1.02] active:scale-95 ${
-                randomTheme
-                  ? 'bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90'
-                  : 'bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:opacity-90'
-              }`}
-              title="Random theme"
-            >
-              <Dice1Icon className="w-4 h-4" />
-            </button>
-            {randomTheme && (
+          <div className="flex items-center justify-end mb-4">
+            <div className="flex items-center gap-2">
+              {randomTheme && (
+                <button
+                  onClick={handleReset}
+                  className="p-2 rounded-lg transition-all duration-150
+                    bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90
+                    transform hover:scale-[1.02] active:scale-95"
+                  title="Reset to default theme"
+                >
+                  <RotateCcwIcon className="w-4 h-4" />
+                </button>
+              )}
               <button
-                onClick={handleReset}
-                className="p-2 rounded-lg transition-all duration-150
-                  bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90
-                  transform hover:scale-[1.02] active:scale-95"
-                title="Reset to default theme"
+                onClick={handleRandomTheme}
+                className={`p-2 rounded-lg transition-all duration-150 transform hover:scale-[1.02] active:scale-95 ${
+                  randomTheme
+                    ? 'bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90'
+                    : 'bg-gradient-to-r from-[#9b87f5] to-[#D946EF] text-white hover:opacity-90'
+                }`}
+                title="Random theme"
               >
-                <RotateCcwIcon className="w-4 h-4" />
+                <Dice1Icon className="w-4 h-4" />
               </button>
-            )}
+            </div>
           </div>
           <div className="flex items-center gap-2">
             <button 
