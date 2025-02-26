@@ -25,7 +25,7 @@ const ProjectPreview = () => (
           />
         </div>
         <div>
-          <h3 className="text-sm font-mono font-medium group-hover:text-blue-400 transition-colors">AI Chat</h3>
+          <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">AI Chat</h3>
           <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Real-time AI conversations</p>
         </div>
       </a>
@@ -44,7 +44,7 @@ const ProjectPreview = () => (
           />
         </div>
         <div>
-          <h3 className="text-sm font-mono font-medium group-hover:text-blue-400 transition-colors">E-commerce</h3>
+          <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">E-commerce</h3>
           <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Modern shopping platform</p>
         </div>
       </a>
@@ -60,7 +60,7 @@ export const ProjectsSection = ({ theme, boxClasses }: ProjectsSectionProps) => 
     <div className={boxClasses}>
       <div className="flex items-center justify-between mb-3">
         <span className="font-mono">projects</span>
-        <span className={`text-xs px-2 py-1 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
+        <span className={`font-mono text-xs px-2 py-1 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
       </div>
       <Tooltip>
         <TooltipTrigger asChild>
