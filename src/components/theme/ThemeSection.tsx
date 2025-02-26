@@ -1,10 +1,12 @@
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface ThemeSectionProps {
   theme: "light" | "dark";
   boxClasses: string;
   setTheme: (theme: "light" | "dark") => void;
+  randomTheme: { background: string; foreground: string; accent: string; } | null;
+  setRandomTheme: (theme: { background: string; foreground: string; accent: string; } | null) => void;
 }
 
 // Predefined color schemes that look good together
@@ -31,36 +33,28 @@ const colorSchemes = [
   }
 ];
 
-export const ThemeSection = ({ theme, boxClasses, setTheme }: ThemeSectionProps) => {
-  const [randomColors, setRandomColors] = useState<typeof colorSchemes[0] | null>(null);
-
+export const ThemeSection = ({ theme, boxClasses, setTheme, randomTheme, setRandomTheme }: ThemeSectionProps) => {
   const applyRandomTheme = () => {
     const randomScheme = colorSchemes[Math.floor(Math.random() * colorSchemes.length)];
-    setRandomColors(randomScheme);
-    
-    // Apply the colors to CSS variables
-    document.documentElement.style.setProperty('--random-background', randomScheme.background);
-    document.documentElement.style.setProperty('--random-foreground', randomScheme.foreground);
-    document.documentElement.style.setProperty('--random-accent', randomScheme.accent);
+    setRandomTheme(randomScheme);
   };
 
   const handleThemeChange = (newTheme: "light" | "dark") => {
     setTheme(newTheme);
-    // Reset random colors when switching to light/dark
-    setRandomColors(null);
-    document.documentElement.style.removeProperty('--random-background');
-    document.documentElement.style.removeProperty('--random-foreground');
-    document.documentElement.style.removeProperty('--random-accent');
+    setRandomTheme(null);
   };
 
-  // Apply the random theme colors to the document if they exist
   useEffect(() => {
-    if (randomColors) {
-      document.documentElement.style.setProperty('--random-background', randomColors.background);
-      document.documentElement.style.setProperty('--random-foreground', randomColors.foreground);
-      document.documentElement.style.setProperty('--random-accent', randomColors.accent);
+    if (randomTheme) {
+      document.documentElement.style.setProperty('--random-background', randomTheme.background);
+      document.documentElement.style.setProperty('--random-foreground', randomTheme.foreground);
+      document.documentElement.style.setProperty('--random-accent', randomTheme.accent);
+    } else {
+      document.documentElement.style.removeProperty('--random-background');
+      document.documentElement.style.removeProperty('--random-foreground');
+      document.documentElement.style.removeProperty('--random-accent');
     }
-  }, [randomColors]);
+  }, [randomTheme]);
 
   return (
     <div className={`${boxClasses} flex flex-col justify-between`}>
@@ -70,7 +64,7 @@ export const ThemeSection = ({ theme, boxClasses, setTheme }: ThemeSectionProps)
           <button 
             onClick={() => handleThemeChange("light")}
             className={`py-3 px-6 rounded-lg font-mono text-base transition-colors text-center flex-1 ${
-              theme === "light" && !randomColors
+              theme === "light" && !randomTheme
                 ? "bg-black text-white" 
                 : "bg-[#333333] text-white hover:bg-[#444444]"
             }`}
@@ -80,7 +74,7 @@ export const ThemeSection = ({ theme, boxClasses, setTheme }: ThemeSectionProps)
           <button 
             onClick={() => handleThemeChange("dark")}
             className={`py-3 px-6 rounded-lg font-mono text-base transition-colors text-center flex-1 ${
-              theme === "dark" && !randomColors
+              theme === "dark" && !randomTheme
                 ? "bg-white text-black" 
                 : "bg-white text-black hover:bg-gray-100"
             }`}
@@ -91,7 +85,7 @@ export const ThemeSection = ({ theme, boxClasses, setTheme }: ThemeSectionProps)
         <button
           onClick={applyRandomTheme}
           className={`py-3 px-6 rounded-lg font-mono text-base transition-colors text-center w-full ${
-            randomColors 
+            randomTheme 
               ? "bg-[var(--random-accent)] text-[var(--random-background)]" 
               : "bg-gradient-to-r from-[#9b87f5] to-[#7E69AB] text-white"
           }`}
