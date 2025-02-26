@@ -31,12 +31,12 @@ const Index = () => {
   }, [theme]);
 
   const boxClasses = `p-3 rounded-lg outline outline-0 outline-black/10 dark:outline-white/10 hover:outline-[3px] hover:outline-offset-[-3px] transition-[outline-width,outline-offset] duration-75 ${
-    theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"
+    theme === "dark" ? "bg-[#222222]" : "bg-white"
   }`;
 
   return (
     <TooltipProvider delayDuration={0}>
-      <main className={`min-h-screen p-8 md:p-16 flex items-center justify-center transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
+      <main className={`min-h-screen p-8 md:p-16 flex items-center justify-center transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-[#F5F5F5] text-black"}`}>
         <div className="w-full max-w-4xl space-y-2">
           {/* Top Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">

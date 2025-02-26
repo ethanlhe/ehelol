@@ -69,7 +69,7 @@ export const ProjectsSection = ({ theme, boxClasses }: ProjectsSectionProps) => 
             className={`w-full py-2 px-4 rounded font-mono text-sm ${
               theme === "dark" 
                 ? "bg-black text-white hover:bg-gray-900" 
-                : "bg-black text-white hover:bg-gray-800"
+                : "bg-[#E5E5E5] text-black hover:bg-[#DADADA]"
             } transition-colors`}
           >
             view
