@@ -7,7 +7,12 @@ import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/comp
 const ProjectPreview = () => (
   <div className="w-80 p-4 space-y-4">
     <div className="grid grid-cols-2 gap-4">
-      <div className="space-y-2">
+      <a 
+        href="https://github.com/ethanlhe/ai-chat"
+        target="_blank"
+        rel="noopener noreferrer" 
+        className="space-y-2 block hover:opacity-90 transition-opacity"
+      >
         <img 
           src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
           alt="AI Chat Application"
@@ -18,8 +23,13 @@ const ProjectPreview = () => (
           <h3 className="text-sm font-mono font-medium">AI Chat</h3>
           <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Real-time AI conversations</p>
         </div>
-      </div>
-      <div className="space-y-2">
+      </a>
+      <a 
+        href="https://github.com/ethanlhe/e-commerce"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="space-y-2 block hover:opacity-90 transition-opacity"
+      >
         <img 
           src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
           alt="E-commerce Platform"
@@ -30,9 +40,9 @@ const ProjectPreview = () => (
           <h3 className="text-sm font-mono font-medium">E-commerce</h3>
           <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Modern shopping platform</p>
         </div>
-      </div>
+      </a>
     </div>
-    <p className="text-xs font-mono text-center text-gray-500 dark:text-gray-400">hover to preview projects</p>
+    <p className="text-xs font-mono text-center text-gray-500 dark:text-gray-400">click to view projects</p>
   </div>
 );
 
