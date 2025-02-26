@@ -30,7 +30,7 @@ const Index = () => {
     }
   }, [theme]);
 
-  const boxClasses = `p-3 rounded-lg transition-all duration-200 hover:outline hover:outline-1 hover:outline-black/10 dark:hover:outline-white/10 ${
+  const boxClasses = `p-3 rounded-lg outline outline-0 outline-black/10 dark:outline-white/10 hover:outline-2 transition-[outline-width] duration-75 ${
     theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"
   }`;
 
