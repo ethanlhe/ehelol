@@ -90,11 +90,11 @@
   }
 
   ::selection {
-    @apply bg-[#4AFF4A]/30 text-black dark:text-white;
+    @apply bg-[#4AFF4A] text-black;
   }
 
   ::-moz-selection {
-    @apply bg-[#4AFF4A]/30 text-black dark:text-white;
+    @apply bg-[#4AFF4A] text-black;
   }
 
   body {
