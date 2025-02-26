@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { NameSection } from "@/components/layout/NameSection";
@@ -65,7 +64,7 @@ const Index = () => {
             </div>
 
             {/* Desktop Layout - Original asymmetric design */}
-            <div className="hidden md:block relative w-full max-w-4xl" style={{ marginLeft: "140px" }}>
+            <div className="hidden md:block relative w-full max-w-4xl" style={{ marginLeft: "160px" }}>
               {/* Top Row */}
               <div className="flex gap-2">
                 <div className="h-[275px] w-[275px]">

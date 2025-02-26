@@ -18,7 +18,7 @@ export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
 
   return (
     <div className={`${boxClasses} flex flex-col justify-between`}>
-      <h2 className="font-mono">contact me</h2>
+      <h2 className="font-mono mb-4">contact me</h2>
       <div className="grid grid-cols-3 gap-3">
         <button
           onClick={handleEmailClick}

@@ -8,7 +8,7 @@ interface ThemeSectionProps {
 export const ThemeSection = ({ theme, boxClasses, setTheme }: ThemeSectionProps) => {
   return (
     <div className={`${boxClasses} flex flex-col justify-between`}>
-      <span className="font-mono">theme</span>
+      <span className="font-mono mb-4">theme</span>
       <div className="flex items-center gap-3">
         <button 
           onClick={() => setTheme("light")}
