@@ -85,7 +85,7 @@ const Index = () => {
                     <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                   </div>
                 </div>
-                <div className="col-span-1 md:col-span-2 h-[135px]">
+                <div className="col-span-1 md:col-span-2 h-[135px] ml-2">
                   <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
               </div>
