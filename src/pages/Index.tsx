@@ -66,11 +66,8 @@ const ExperienceItem = ({ company, description, index, link }: { company: string
       </TooltipTrigger>
       <TooltipContent 
         side={isBottomRow ? "bottom" : "top"}
-        className="bg-white dark:bg-[#222222] border-none max-w-[200px]"
-        style={{ 
-          zIndex: 999999,
-          position: 'relative'
-        }}
+        className="bg-white dark:bg-[#222222] border-none max-w-[200px] z-[9999]"
+        style={{ zIndex: 9999 }}
       >
         <p className="text-xs font-mono">{description}</p>
       </TooltipContent>
@@ -134,7 +131,7 @@ const Index = () => {
 
   return (
     <TooltipProvider delayDuration={0}>
-      <main className={`min-h-screen p-8 md:p-16 transition-colors duration-300 relative ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
+      <main className={`min-h-screen p-8 md:p-16 transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Left Column */}
           <div className="space-y-4">
@@ -168,10 +165,7 @@ const Index = () => {
                   align="center"
                   sideOffset={24}
                   className="bg-white/80 dark:bg-black/80 backdrop-blur-md border-none shadow-xl animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
-                  style={{ 
-                    zIndex: 999999,
-                    position: 'relative'
-                  }}
+                  style={{ zIndex: 99999 }}
                 >
                   <ProjectPreview />
                 </TooltipContent>
