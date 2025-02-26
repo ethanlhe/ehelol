@@ -65,7 +65,7 @@ const Index = () => {
             </div>
 
             {/* Desktop Layout - Original asymmetric design */}
-            <div className="hidden md:block relative w-full max-w-4xl" style={{ marginLeft: "180px" }}>
+            <div className="hidden md:block relative w-full max-w-4xl" style={{ marginLeft: "140px" }}>
               {/* Top Row */}
               <div className="flex gap-2">
                 <div className="h-[275px] w-[275px]">
