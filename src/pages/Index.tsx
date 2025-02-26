@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { NameSection } from "@/components/layout/NameSection";
@@ -9,8 +8,10 @@ import { ExperienceSection } from "@/components/experience/ExperienceSection";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { ThemeSection } from "@/components/theme/ThemeSection";
 
+type ThemeType = "light" | "dark" | { primary: string; secondary: string; text: string };
+
 const Index = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<ThemeType>("light");
 
   useEffect(() => {
     const images = [
@@ -25,18 +26,37 @@ const Index = () => {
 
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("random-theme");
+    } else if (theme === "light") {
+      document.documentElement.classList.remove("dark", "random-theme");
     } else {
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("random-theme");
+      document.documentElement.style.setProperty('--primary-color', theme.primary);
+      document.documentElement.style.setProperty('--secondary-color', theme.secondary);
+      document.documentElement.style.setProperty('--text-color', theme.text);
     }
   }, [theme]);
 
   const boxClasses = `p-3 rounded-lg outline outline-0 outline-black/10 dark:outline-white/10 hover:outline-[3px] hover:outline-offset-[-3px] transition-[outline-width,outline-offset] duration-75 ${
-    theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"
+    typeof theme === 'object'
+      ? 'bg-[var(--secondary-color)]'
+      : theme === "dark" 
+        ? "bg-[#222222]" 
+        : "bg-[#f4f4f4]"
   }`;
 
   return (
     <TooltipProvider delayDuration={0}>
-      <main className={`min-h-screen p-8 md:p-16 flex items-center transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
+      <main 
+        className={`min-h-screen p-8 md:p-16 flex items-center transition-colors duration-300 ${
+          typeof theme === 'object'
+            ? 'bg-[var(--primary-color)] text-[var(--text-color)]'
+            : theme === "dark" 
+              ? "bg-[#111111] text-white" 
+              : "bg-white text-black"
+        }`}
+      >
         <div className="relative w-full flex justify-center">
           <div className="w-full md:w-auto space-y-1">
             {/* Mobile Layout - All sections stacked */}
