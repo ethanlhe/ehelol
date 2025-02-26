@@ -18,7 +18,7 @@ const ExperienceItem = ({ company, description, index, link }: ExperienceItemPro
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="py-2 px-4 rounded font-mono text-sm bg-white hover:bg-gray-100 dark:bg-[#333333] dark:hover:bg-[#444444] transition-colors block text-center"
+          className="py-1.5 px-4 rounded font-mono text-sm bg-white hover:bg-gray-100 dark:bg-[#333333] dark:hover:bg-[#444444] transition-colors block text-center"
         >
           {company}
         </a>
@@ -65,11 +65,11 @@ const experiences = [
 export const ExperienceSection = ({ theme, boxClasses }: ExperienceSectionProps) => {
   return (
     <div className={boxClasses}>
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between mb-2">
         <span className="font-mono">experience</span>
         <span className={`text-sm font-mono ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>2+ years</span>
       </div>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-2">
         {experiences.map((exp, index) => (
           <ExperienceItem 
             key={index}
