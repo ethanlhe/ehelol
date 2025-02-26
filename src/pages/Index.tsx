@@ -50,20 +50,20 @@ const Index = () => {
 
           {/* Middle Row - Blog and Contact */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-            <div className="h-[120px]">
+            <div className="h-[135px]">
               <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
-            <div className="col-span-2 h-[120px]">
+            <div className="col-span-2 h-[135px]">
               <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
           </div>
 
           {/* Bottom Row - Experience and Theme */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-            <div className="col-span-2 h-[120px]">
+            <div className="col-span-2 h-[135px]">
               <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
-            <div className="h-[120px]">
+            <div className="h-[135px]">
               <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
             </div>
           </div>
