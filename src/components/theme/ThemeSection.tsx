@@ -1,5 +1,5 @@
 
-import { DiceIcon, RotateCcwIcon } from "lucide-react";
+import { Dice1Icon, RotateCcwIcon } from "lucide-react";
 
 interface ThemeSectionProps {
   isDark: boolean;
@@ -149,15 +149,15 @@ export const ThemeSection = ({ isDark, setIsDark, randomTheme, setRandomTheme, b
         <div className="flex gap-2">
           <button
             onClick={handleRandomTheme}
-            className={`py-3 px-6 rounded-lg font-mono text-base transition-all duration-150 text-center flex-1 flex items-center justify-center gap-2
-              ${randomTheme
+            className={`py-3 px-6 rounded-lg font-mono text-base transition-all duration-150 text-center flex-1 flex items-center justify-center gap-2 ${
+              randomTheme
                 ? 'bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90'
                 : 'bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:opacity-90'
               }
               transform hover:scale-[1.02] active:scale-95
             `}
           >
-            <DiceIcon className="w-4 h-4" />
+            <Dice1Icon className="w-4 h-4" />
             <span>random</span>
           </button>
           {randomTheme && (
