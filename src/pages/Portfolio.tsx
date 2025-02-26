@@ -13,11 +13,11 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
     },
     {
-      title: "E-commerce Platform",
-      description: "Full-stack e-commerce solution with product management and payment integration",
-      tech: ["React", "TypeScript", "Stripe", "MongoDB"],
-      link: "https://github.com/ethanlhe",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+      title: "Schedule Map",
+      description: "Developed a Google Chrome extension that helps UC Davis students visualize their class locations on an interactive map, displaying travel times between classes using various transportation modes. Features include dynamic markers, real-time distance calculations, and course time conflict warnings.",
+      tech: ["React", "Google Maps API", "Chrome Extension", "Distance Matrix API", "Geolocation API"],
+      link: "https://codelabdavis.medium.com/schedule-map-5b59eb7ef4a1",
+      image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742"
     },
     {
       title: "Task Management System",
