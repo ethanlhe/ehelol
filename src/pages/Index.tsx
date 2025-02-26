@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const Index = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -13,6 +14,11 @@ const Index = () => {
       document.documentElement.classList.remove("dark");
     }
   }, [theme]);
+
+  const handleEmailClick = () => {
+    navigator.clipboard.writeText("ethanhe0716@gmail.com");
+    toast.success("Email copied to clipboard!");
+  };
 
   return (
     <main className={`min-h-screen p-8 md:p-16 transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
@@ -47,10 +53,10 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Portfolio Section */}
+          {/* Projects Section */}
           <div className={`space-y-4 p-6 rounded-lg ${theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"}`}>
             <div className="flex items-center justify-between">
-              <span className="font-mono">portfolio</span>
+              <span className="font-mono">projects</span>
               <span className={`text-xs px-2 py-1 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
             </div>
             <button 
@@ -77,46 +83,38 @@ const Index = () => {
             <p className="font-mono">davis, california based</p>
           </div>
 
-          {/* Projects Section */}
-          <div className={`space-y-4 p-6 rounded-lg ${theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"}`}>
-            <h2 className="font-mono">featured projects</h2>
-            <div className="space-y-4">
-              <div className={`p-4 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>
-                <h3 className="font-mono mb-2">BSCI Labs Subway Map</h3>
-                <p className={`text-sm font-mono ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-                  git visualization tool built with react.js and d3.js
-                </p>
-              </div>
-              <div className={`p-4 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>
-                <h3 className="font-mono mb-2">Schedule Map</h3>
-                <p className={`text-sm font-mono ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-                  chrome extension for UC Davis students
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Contact Section */}
           <div className={`space-y-4 p-6 rounded-lg ${theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"}`}>
             <h2 className="font-mono">contact me</h2>
             <div className="flex flex-wrap gap-4">
-              {[
-                { label: "email", href: "mailto:ethanhe0716@gmail.com" },
-                { label: "linkedin", href: "https://linkedin.com/in/ethanlhe" },
-                { label: "github", href: "https://github.com/ethanlhe" }
-              ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.label !== "email" ? "_blank" : undefined}
-                  rel={link.label !== "email" ? "noopener noreferrer" : undefined}
-                  className={`py-2 px-4 rounded font-mono text-sm ${
-                    theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
-                  } transition-colors`}
-                >
-                  {link.label}
-                </a>
-              ))}
+              <button
+                onClick={handleEmailClick}
+                className={`py-2 px-4 rounded font-mono text-sm ${
+                  theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
+                } transition-colors`}
+              >
+                email
+              </button>
+              <a
+                href="https://www.linkedin.com/in/ethanlhe/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`py-2 px-4 rounded font-mono text-sm ${
+                  theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
+                } transition-colors`}
+              >
+                linkedin
+              </a>
+              <a
+                href="https://github.com/ethanlhe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`py-2 px-4 rounded font-mono text-sm ${
+                  theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
+                } transition-colors`}
+              >
+                github
+              </a>
             </div>
           </div>
 
