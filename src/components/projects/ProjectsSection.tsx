@@ -8,7 +8,7 @@ interface ProjectsSectionProps {
 }
 
 const ProjectPreview = () => (
-  <div className="w-[300px] p-4 space-y-4 backdrop-blur-sm rounded-lg">
+  <div className="w-[300px] p-4 space-y-4 backdrop-blur-sm rounded-xl">
     <div className="grid grid-cols-2 gap-4">
       <a 
         href="https://github.com/ethanlhe/ai-chat"
@@ -16,7 +16,7 @@ const ProjectPreview = () => (
         rel="noopener noreferrer" 
         className="group space-y-2 block"
       >
-        <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
+        <div className="overflow-hidden rounded-xl ring-1 ring-white/10">
           <img 
             src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
             alt="AI Chat Application"
@@ -35,7 +35,7 @@ const ProjectPreview = () => (
         rel="noopener noreferrer"
         className="group space-y-2 block"
       >
-        <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
+        <div className="overflow-hidden rounded-xl ring-1 ring-white/10">
           <img 
             src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
             alt="E-commerce Platform"
@@ -60,13 +60,13 @@ export const ProjectsSection = ({ theme, boxClasses }: ProjectsSectionProps) => 
     <div className={`${boxClasses} flex flex-col justify-between`}>
       <div className="flex items-center justify-between">
         <span className="font-mono">projects</span>
-        <span className={`font-mono text-xs px-2 py-1 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
+        <span className={`font-mono text-xs px-2 py-1 rounded-xl ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
       </div>
       <Tooltip>
         <TooltipTrigger asChild>
           <button 
             onClick={() => navigate('/portfolio')}
-            className={`w-full py-2 px-4 rounded font-mono text-sm ${
+            className={`w-full py-2 px-4 rounded-xl font-mono text-sm ${
               theme === "dark" 
                 ? "bg-black text-white hover:bg-gray-900" 
                 : "bg-black text-white hover:bg-gray-800"
