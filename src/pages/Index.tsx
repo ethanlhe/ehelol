@@ -161,11 +161,11 @@ const Index = () => {
                   </button>
                 </TooltipTrigger>
                 <TooltipContent 
-                  side="right" 
-                  align="start"
-                  alignOffset={-50}
-                  sideOffset={20}
-                  className="bg-white/80 dark:bg-black/80 backdrop-blur-md border-none z-[9999] shadow-xl animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
+                  side="left" 
+                  align="center"
+                  sideOffset={16}
+                  className="bg-white/80 dark:bg-black/80 backdrop-blur-md border-none shadow-xl animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
+                  style={{ zIndex: 99999 }}
                 >
                   <ProjectPreview />
                 </TooltipContent>
