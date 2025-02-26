@@ -37,10 +37,10 @@ const Index = () => {
   return (
     <TooltipProvider delayDuration={0}>
       <main className={`min-h-screen p-8 md:p-16 flex items-center justify-center transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
-        <div className="relative w-full max-w-[1200px]">
+        <div className="relative w-full max-w-[900px]" style={{ marginLeft: "-150px" }}>
           <div className="relative w-full space-y-2">
             {/* Top Row */}
-            <div className="flex justify-center gap-2">
+            <div className="flex gap-2">
               <div className="h-[300px] w-[300px]">
                 <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
