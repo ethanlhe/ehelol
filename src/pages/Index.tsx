@@ -78,10 +78,10 @@ const Index = () => {
               {/* Middle Row - Projects, Blog and Contact */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-1">
                 <div className="relative md:col-span-1">
-                  <div className="h-[135px] w-[300px]">
+                  <div className="h-[135px] w-[275px]">
                     <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                   </div>
-                  <div className="absolute left-0 top-0 -translate-x-[calc(100%+4px)] w-[300px] h-[135px]">
+                  <div className="absolute left-0 top-0 -translate-x-[calc(100%+4px)] w-[275px] h-[135px]">
                     <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                   </div>
                 </div>
@@ -95,7 +95,7 @@ const Index = () => {
                 <div className="col-span-2 h-[135px]">
                   <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
-                <div className="h-[135px] w-[300px]">
+                <div className="h-[135px] w-[275px]">
                   <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
                 </div>
               </div>
