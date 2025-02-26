@@ -6,7 +6,7 @@ interface NameSectionProps {
 
 export const NameSection = ({ boxClasses }: NameSectionProps) => {
   return (
-    <div className={`${boxClasses} min-h-[200px] flex flex-col justify-between`}>
+    <div className={`${boxClasses} flex flex-col justify-between h-full`}>
       <div>
         <h1 className="text-xl font-mono">ethan he</h1>
         <p className="text-muted-foreground font-mono">software engineer</p>

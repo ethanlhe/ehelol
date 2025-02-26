@@ -38,19 +38,26 @@ const Index = () => {
     <TooltipProvider delayDuration={0}>
       <main className={`min-h-screen p-8 md:p-16 transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-2">
-          {/* Left Column */}
+          {/* Left Column - Name Section */}
           <div className="space-y-2">
-            <NameSection theme={theme} boxClasses={boxClasses} />
-            <ProjectsSection theme={theme} boxClasses={boxClasses} />
-            <BlogSection theme={theme} boxClasses={boxClasses} />
+            <div className="aspect-square">
+              <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+            </div>
+            <div className="grid grid-cols-1 gap-2">
+              <BlogSection theme={theme} boxClasses={boxClasses} />
+              <ExperienceSection theme={theme} boxClasses={boxClasses} />
+            </div>
           </div>
 
-          {/* Right Column */}
+          {/* Right Column - About Section */}
           <div className="space-y-2">
-            <AboutSection theme={theme} boxClasses={boxClasses} />
-            <ExperienceSection theme={theme} boxClasses={boxClasses} />
-            <ContactSection theme={theme} boxClasses={boxClasses} />
-            <ThemeSection theme={theme} boxClasses={boxClasses} setTheme={setTheme} />
+            <div className="aspect-square">
+              <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+            </div>
+            <div className="grid grid-cols-1 gap-2">
+              <ContactSection theme={theme} boxClasses={boxClasses} />
+              <ThemeSection theme={theme} boxClasses={boxClasses} setTheme={setTheme} />
+            </div>
           </div>
         </div>
       </main>
