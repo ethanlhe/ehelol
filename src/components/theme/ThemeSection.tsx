@@ -121,54 +121,56 @@ export const ThemeSection = ({ isDark, setIsDark, randomTheme, setRandomTheme, b
   };
 
   return (
-    <div className={`${boxClasses} flex flex-col justify-between`}>
-      <div className="flex flex-col gap-2">
+    <div className={`${boxClasses} flex flex-col`}>
+      <div className="flex flex-col h-full">
         <span className="font-mono">theme</span>
-        <div className="flex items-center justify-end gap-2">
-          <button
-            onClick={handleRandomTheme}
-            className={`p-2 rounded-lg transition-all duration-150 transform hover:scale-[1.02] active:scale-95 ${
-              randomTheme
-                ? 'bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90'
-                : 'bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:opacity-90'
-            }`}
-            title="Random theme"
-          >
-            <Dice1Icon className="w-4 h-4" />
-          </button>
-          {randomTheme && (
+        <div className="flex-grow flex flex-col justify-between mt-2">
+          <div className="flex items-center justify-end gap-2">
             <button
-              onClick={handleReset}
-              className="p-2 rounded-lg transition-all duration-150
-                bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90
-                transform hover:scale-[1.02] active:scale-95"
-              title="Reset to default theme"
+              onClick={handleRandomTheme}
+              className={`p-2 rounded-lg transition-all duration-150 transform hover:scale-[1.02] active:scale-95 ${
+                randomTheme
+                  ? 'bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90'
+                  : 'bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:opacity-90'
+              }`}
+              title="Random theme"
             >
-              <RotateCcwIcon className="w-4 h-4" />
+              <Dice1Icon className="w-4 h-4" />
             </button>
-          )}
-        </div>
-        <div className="flex items-center gap-2">
-          <button 
-            onClick={() => handleThemeChange(false)}
-            className={`py-3 px-6 rounded-lg font-mono text-base text-center flex-1 ${
-              !isDark
-                ? "bg-black text-white dark:bg-white dark:text-black"
-                : "bg-[#333333] text-white hover:bg-[#444444] transition-colors"
-            }`}
-          >
-            light
-          </button>
-          <button 
-            onClick={() => handleThemeChange(true)}
-            className={`py-3 px-6 rounded-lg font-mono text-base text-center flex-1 ${
-              isDark
-                ? "bg-white text-black dark:bg-black dark:text-white"
-                : "bg-white text-black hover:bg-gray-100 transition-colors"
-            }`}
-          >
-            dark
-          </button>
+            {randomTheme && (
+              <button
+                onClick={handleReset}
+                className="p-2 rounded-lg transition-all duration-150
+                  bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90
+                  transform hover:scale-[1.02] active:scale-95"
+                title="Reset to default theme"
+              >
+                <RotateCcwIcon className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+          <div className="flex items-center gap-2">
+            <button 
+              onClick={() => handleThemeChange(false)}
+              className={`py-3 px-6 rounded-lg font-mono text-base text-center flex-1 ${
+                !isDark
+                  ? "bg-black text-white dark:bg-white dark:text-black"
+                  : "bg-[#333333] text-white hover:bg-[#444444] transition-colors"
+              }`}
+            >
+              light
+            </button>
+            <button 
+              onClick={() => handleThemeChange(true)}
+              className={`py-3 px-6 rounded-lg font-mono text-base text-center flex-1 ${
+                isDark
+                  ? "bg-white text-black dark:bg-black dark:text-white"
+                  : "bg-white text-black hover:bg-gray-100 transition-colors"
+              }`}
+            >
+              dark
+            </button>
+          </div>
         </div>
       </div>
     </div>
