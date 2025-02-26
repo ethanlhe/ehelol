@@ -19,7 +19,7 @@ export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
   return (
     <div className={boxClasses}>
       <h2 className="font-mono mb-4">contact me</h2>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-3 gap-3">
         <button
           onClick={handleEmailClick}
           className={buttonClasses}
@@ -33,6 +33,14 @@ export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
           className={buttonClasses}
         >
           linkedin
+        </a>
+        <a
+          href="https://github.com/ethanniser"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonClasses}
+        >
+          github
         </a>
       </div>
     </div>
