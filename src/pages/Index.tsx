@@ -40,20 +40,20 @@ const Index = () => {
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-2">
             {/* Projects Section - Left Column on Desktop */}
-            <div className="lg:col-span-3 order-3 lg:order-1">
+            <div className="lg:col-span-2 order-3 lg:order-1">
               <div className="h-[135px]">
                 <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
             </div>
 
             {/* Main Content - Center Column */}
-            <div className="lg:col-span-6 space-y-2 order-1 lg:order-2">
+            <div className="lg:col-span-8 space-y-2 order-1 lg:order-2">
               {/* Top Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                <div className="h-[275px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-2xl mx-auto">
+                <div className="h-[275px] w-[275px] justify-self-end md:justify-self-end">
                   <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
-                <div className="h-[275px]">
+                <div className="h-[275px] w-[275px] justify-self-start md:justify-self-start">
                   <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
               </div>
@@ -80,7 +80,7 @@ const Index = () => {
             </div>
 
             {/* Empty Right Column for Balance */}
-            <div className="lg:col-span-3 order-2 lg:order-3"></div>
+            <div className="lg:col-span-2 order-2 lg:order-3"></div>
           </div>
         </div>
       </main>
