@@ -49,14 +49,16 @@ const Index = () => {
           </div>
 
           {/* Middle Row - Projects, Blog and Contact */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-            <div className="h-[135px]">
-              <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+            <div className="relative md:col-span-1">
+              <div className="h-[135px]">
+                <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+              </div>
+              <div className="absolute left-0 top-0 -translate-x-[calc(100%+8px)] w-full h-[135px] hidden md:block">
+                <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+              </div>
             </div>
-            <div className="h-[135px]">
-              <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
-            </div>
-            <div className="col-span-2 h-[135px]">
+            <div className="col-span-1 md:col-span-2 h-[135px]">
               <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
           </div>

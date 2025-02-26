@@ -57,9 +57,9 @@ export const ProjectsSection = ({ theme, boxClasses }: ProjectsSectionProps) => 
   const navigate = useNavigate();
 
   return (
-    <div className={boxClasses}>
-      <div className="flex items-center justify-between mb-3">
-        <span className="font-mono">projects</span>
+    <div className={`${boxClasses} flex flex-col justify-between`}>
+      <div className="flex items-center justify-between">
+        <span className="font-mono">portfolio</span>
         <span className={`font-mono text-xs px-2 py-1 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
       </div>
       <Tooltip>
@@ -68,7 +68,7 @@ export const ProjectsSection = ({ theme, boxClasses }: ProjectsSectionProps) => 
             onClick={() => navigate('/portfolio')}
             className={`w-full py-2 px-4 rounded font-mono text-sm ${
               theme === "dark" 
-                ? "bg-white text-black hover:bg-gray-200" 
+                ? "bg-black text-white hover:bg-gray-900" 
                 : "bg-black text-white hover:bg-gray-800"
             } transition-colors`}
           >
