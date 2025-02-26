@@ -23,21 +23,25 @@ const ProjectPreview = () => (
   </div>
 );
 
-const ExperienceItem = ({ company, description }: { company: string; description: string }) => (
-  <Tooltip delayDuration={0}>
-    <TooltipTrigger asChild>
-      <button className="py-2 px-4 rounded font-mono text-sm bg-[#333333] hover:bg-[#444444] dark:bg-[#333333] dark:hover:bg-[#444444] transition-colors">
-        {company}
-      </button>
-    </TooltipTrigger>
-    <TooltipContent 
-      side="top"
-      className="bg-white dark:bg-[#222222] border-none max-w-[200px] z-[9999]"
-    >
-      <p className="text-xs font-mono">{description}</p>
-    </TooltipContent>
-  </Tooltip>
-);
+const ExperienceItem = ({ company, description, index }: { company: string; description: string; index: number }) => {
+  const isBottomRow = index >= 2; // For 2x2 grid, bottom row starts at index 2
+
+  return (
+    <Tooltip delayDuration={0}>
+      <TooltipTrigger asChild>
+        <button className="py-2 px-4 rounded font-mono text-sm bg-white hover:bg-gray-100 dark:bg-[#333333] dark:hover:bg-[#444444] transition-colors">
+          {company}
+        </button>
+      </TooltipTrigger>
+      <TooltipContent 
+        side={isBottomRow ? "bottom" : "top"}
+        className="bg-white dark:bg-[#222222] border-none max-w-[200px] z-[9999]"
+      >
+        <p className="text-xs font-mono">{description}</p>
+      </TooltipContent>
+    </Tooltip>
+  );
+};
 
 const Index = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -167,7 +171,12 @@ const Index = () => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 {experiences.map((exp, index) => (
-                  <ExperienceItem key={index} company={exp.company} description={exp.description} />
+                  <ExperienceItem 
+                    key={index} 
+                    company={exp.company} 
+                    description={exp.description} 
+                    index={index}
+                  />
                 ))}
               </div>
             </div>
