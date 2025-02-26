@@ -12,7 +12,7 @@ export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
     toast.success("Email copied to clipboard!");
   };
 
-  const buttonClasses = `py-2 px-4 rounded-xl font-mono text-sm w-full text-center ${
+  const buttonClasses = `py-2 px-4 rounded-lg font-mono text-sm w-full text-center ${
     theme === "dark" ? "bg-[#333333] hover:bg-[#444444]" : "bg-white hover:bg-gray-100"
   } transition-colors`;
 
