@@ -4,19 +4,19 @@ import { toast } from "sonner";
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 
 const ProjectPreview = () => (
-  <div className="w-[400px] p-6 space-y-6 backdrop-blur-sm rounded-lg">
-    <div className="grid grid-cols-2 gap-6">
+  <div className="w-[300px] p-4 space-y-4 backdrop-blur-sm rounded-lg">
+    <div className="grid grid-cols-2 gap-4">
       <a 
         href="https://github.com/ethanlhe/ai-chat"
         target="_blank"
         rel="noopener noreferrer" 
-        className="group space-y-3 block"
+        className="group space-y-2 block"
       >
         <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
           <img 
             src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
             alt="AI Chat Application"
-            className="w-full h-32 object-cover transform transition-transform group-hover:scale-110"
+            className="w-full h-24 object-cover transform transition-transform group-hover:scale-110"
             loading="eager"
           />
         </div>
@@ -29,13 +29,13 @@ const ProjectPreview = () => (
         href="https://github.com/ethanlhe/e-commerce"
         target="_blank"
         rel="noopener noreferrer"
-        className="group space-y-3 block"
+        className="group space-y-2 block"
       >
         <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
           <img 
             src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
             alt="E-commerce Platform"
-            className="w-full h-32 object-cover transform transition-transform group-hover:scale-110"
+            className="w-full h-24 object-cover transform transition-transform group-hover:scale-110"
             loading="eager"
           />
         </div>
@@ -163,7 +163,7 @@ const Index = () => {
                 <TooltipContent 
                   side="left" 
                   align="center"
-                  sideOffset={16}
+                  sideOffset={24}
                   className="bg-white/80 dark:bg-black/80 backdrop-blur-md border-none shadow-xl animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
                   style={{ zIndex: 99999 }}
                 >
