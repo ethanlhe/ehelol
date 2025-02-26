@@ -1,3 +1,4 @@
+
 import { Dice1Icon, RotateCcwIcon } from "lucide-react";
 
 interface ThemeSectionProps {
@@ -121,9 +122,9 @@ export const ThemeSection = ({ isDark, setIsDark, randomTheme, setRandomTheme, b
 
   return (
     <div className={`${boxClasses} flex flex-col justify-between`}>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         <span className="font-mono">theme</span>
-        <div className="flex items-center justify-end gap-2 mb-1">
+        <div className="flex items-center justify-end gap-2">
           <button
             onClick={handleRandomTheme}
             className={`p-2 rounded-lg transition-all duration-150 transform hover:scale-[1.02] active:scale-95 ${
