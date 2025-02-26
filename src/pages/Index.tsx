@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { NameSection } from "@/components/layout/NameSection";
@@ -39,7 +40,7 @@ const Index = () => {
         <div className="relative w-full flex justify-center" style={{ marginLeft: "175px" }}>
           <div className="relative w-full max-w-4xl space-y-2">
             {/* Top Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="flex gap-2">
               <div className="h-[250px] w-[250px]">
                 <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
