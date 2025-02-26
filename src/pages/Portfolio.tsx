@@ -9,19 +9,22 @@ const Portfolio = () => {
       title: "AI Chat Application",
       description: "A real-time chat application powered by OpenAI's GPT-3, built with React and Node.js",
       tech: ["React", "Node.js", "OpenAI", "WebSocket"],
-      link: "https://github.com/ethanlhe"
+      link: "https://github.com/ethanlhe",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
     },
     {
       title: "E-commerce Platform",
       description: "Full-stack e-commerce solution with product management and payment integration",
       tech: ["React", "TypeScript", "Stripe", "MongoDB"],
-      link: "https://github.com/ethanlhe"
+      link: "https://github.com/ethanlhe",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
     },
     {
       title: "Task Management System",
       description: "Collaborative task management tool with real-time updates and team features",
       tech: ["React", "Firebase", "Material-UI", "Redux"],
-      link: "https://github.com/ethanlhe"
+      link: "https://github.com/ethanlhe",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
     }
   ];
 
@@ -44,6 +47,13 @@ const Portfolio = () => {
               key={index}
               className="p-6 rounded-lg bg-[#f4f4f4] dark:bg-[#222222] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
             >
+              <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img 
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <h2 className="text-lg font-mono mb-3">{project.title}</h2>
               <p className="text-gray-600 dark:text-gray-400 font-mono text-sm mb-4">
                 {project.description}

@@ -2,6 +2,25 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+
+const ProjectPreview = () => (
+  <div className="w-64 p-3 space-y-3">
+    <div className="grid grid-cols-2 gap-2">
+      <img 
+        src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+        alt="AI Chat Application"
+        className="w-full h-20 object-cover rounded"
+      />
+      <img 
+        src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+        alt="E-commerce Platform"
+        className="w-full h-20 object-cover rounded"
+      />
+    </div>
+    <p className="text-xs font-mono text-center">hover to preview projects</p>
+  </div>
+);
 
 const Index = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -41,16 +60,23 @@ const Index = () => {
               <span className="font-mono">projects</span>
               <span className={`text-xs px-2 py-1 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
             </div>
-            <button 
-              onClick={() => navigate('/portfolio')}
-              className={`w-full py-2 px-4 rounded font-mono text-sm ${
-                theme === "dark" 
-                  ? "bg-white text-black hover:bg-gray-200" 
-                  : "bg-black text-white hover:bg-gray-800"
-              } transition-colors`}
-            >
-              view
-            </button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button 
+                  onClick={() => navigate('/portfolio')}
+                  className={`w-full py-2 px-4 rounded font-mono text-sm ${
+                    theme === "dark" 
+                      ? "bg-white text-black hover:bg-gray-200" 
+                      : "bg-black text-white hover:bg-gray-800"
+                  } transition-colors`}
+                >
+                  view
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="right" className="bg-white dark:bg-[#222222] border-none">
+                <ProjectPreview />
+              </TooltipContent>
+            </Tooltip>
           </div>
 
           {/* Blog Section */}
