@@ -1,4 +1,3 @@
-
 import { Dice1Icon, RotateCcwIcon } from "lucide-react";
 
 interface ThemeSectionProps {
@@ -122,8 +121,32 @@ export const ThemeSection = ({ isDark, setIsDark, randomTheme, setRandomTheme, b
 
   return (
     <div className={`${boxClasses} flex flex-col justify-between`}>
-      <span className="font-mono mb-4">theme</span>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-4">
+        <span className="font-mono">theme</span>
+        <div className="flex items-center justify-end gap-2 mb-1">
+          <button
+            onClick={handleRandomTheme}
+            className={`p-2 rounded-lg transition-all duration-150 transform hover:scale-[1.02] active:scale-95 ${
+              randomTheme
+                ? 'bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90'
+                : 'bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:opacity-90'
+            }`}
+            title="Random theme"
+          >
+            <Dice1Icon className="w-4 h-4" />
+          </button>
+          {randomTheme && (
+            <button
+              onClick={handleReset}
+              className="p-2 rounded-lg transition-all duration-150
+                bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90
+                transform hover:scale-[1.02] active:scale-95"
+              title="Reset to default theme"
+            >
+              <RotateCcwIcon className="w-4 h-4" />
+            </button>
+          )}
+        </div>
         <div className="flex items-center gap-2">
           <button 
             onClick={() => handleThemeChange(false)}
@@ -145,32 +168,6 @@ export const ThemeSection = ({ isDark, setIsDark, randomTheme, setRandomTheme, b
           >
             dark
           </button>
-        </div>
-        <div className="flex gap-2">
-          <button
-            onClick={handleRandomTheme}
-            className={`py-3 px-6 rounded-lg font-mono text-base transition-all duration-150 text-center flex-1 flex items-center justify-center gap-2 ${
-              randomTheme
-                ? 'bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90'
-                : 'bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:opacity-90'
-              }
-              transform hover:scale-[1.02] active:scale-95
-            `}
-          >
-            <Dice1Icon className="w-4 h-4" />
-            <span>random</span>
-          </button>
-          {randomTheme && (
-            <button
-              onClick={handleReset}
-              className="py-3 px-4 rounded-lg font-mono text-base transition-all duration-150
-                bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90
-                transform hover:scale-[1.02] active:scale-95"
-              title="Reset to default theme"
-            >
-              <RotateCcwIcon className="w-4 h-4" />
-            </button>
-          )}
         </div>
       </div>
     </div>
