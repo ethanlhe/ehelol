@@ -76,8 +76,8 @@ const Index = () => {
               </div>
 
               {/* Middle Row - Projects, Blog and Contact */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-1">
-                <div className="relative md:col-span-1">
+              <div className="mt-1 flex">
+                <div className="relative">
                   <div className="h-[135px] w-[275px]">
                     <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                   </div>
@@ -85,7 +85,7 @@ const Index = () => {
                     <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                   </div>
                 </div>
-                <div className="col-span-1 md:col-span-2 h-[135px] ml-1">
+                <div className="ml-1 flex-1 h-[135px]">
                   <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
               </div>
