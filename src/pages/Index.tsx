@@ -38,24 +38,24 @@ const Index = () => {
     <TooltipProvider delayDuration={0}>
       <main className={`min-h-screen p-8 md:p-16 transition-colors duration-300 ${theme === "dark" ? "bg-[#111111] text-white" : "bg-white text-black"}`}>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-2">
-          {/* Left Column - Name Section */}
+          {/* Left Column */}
           <div className="space-y-2">
-            <div className="aspect-square">
+            <div className="h-[200px]">
               <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
             <div className="grid grid-cols-1 gap-2">
               <BlogSection theme={theme} boxClasses={boxClasses} />
-              <ExperienceSection theme={theme} boxClasses={boxClasses} />
+              <ExperienceSection theme={theme} boxClasses={`${boxClasses} min-h-[120px]`} />
             </div>
           </div>
 
-          {/* Right Column - About Section */}
+          {/* Right Column */}
           <div className="space-y-2">
-            <div className="aspect-square">
+            <div className="h-[200px]">
               <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
             </div>
             <div className="grid grid-cols-1 gap-2">
-              <ContactSection theme={theme} boxClasses={boxClasses} />
+              <ContactSection theme={theme} boxClasses={`${boxClasses} min-h-[120px]`} />
               <ThemeSection theme={theme} boxClasses={boxClasses} setTheme={setTheme} />
             </div>
           </div>
