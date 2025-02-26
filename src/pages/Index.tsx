@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { NameSection } from "@/components/layout/NameSection";
@@ -8,10 +9,15 @@ import { ExperienceSection } from "@/components/experience/ExperienceSection";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { ThemeSection } from "@/components/theme/ThemeSection";
 
-type ThemeType = "light" | "dark" | { primary: string; secondary: string; text: string };
+interface ColorTheme {
+  primary: string;
+  secondary: string;
+  text: string;
+}
 
 const Index = () => {
-  const [theme, setTheme] = useState<ThemeType>("light");
+  const [isDark, setIsDark] = useState(false);
+  const [randomTheme, setRandomTheme] = useState<ColorTheme | null>(null);
 
   useEffect(() => {
     const images = [
@@ -24,24 +30,27 @@ const Index = () => {
       img.src = src;
     });
 
-    if (theme === "dark") {
+    if (isDark) {
       document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("random-theme");
-    } else if (theme === "light") {
-      document.documentElement.classList.remove("dark", "random-theme");
     } else {
       document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("random-theme");
-      document.documentElement.style.setProperty('--primary-color', theme.primary);
-      document.documentElement.style.setProperty('--secondary-color', theme.secondary);
-      document.documentElement.style.setProperty('--text-color', theme.text);
     }
-  }, [theme]);
+
+    if (randomTheme) {
+      document.documentElement.style.setProperty('--primary-color', randomTheme.primary);
+      document.documentElement.style.setProperty('--secondary-color', randomTheme.secondary);
+      document.documentElement.style.setProperty('--text-color', randomTheme.text);
+    } else {
+      document.documentElement.style.removeProperty('--primary-color');
+      document.documentElement.style.removeProperty('--secondary-color');
+      document.documentElement.style.removeProperty('--text-color');
+    }
+  }, [isDark, randomTheme]);
 
   const boxClasses = `p-3 rounded-lg outline outline-0 outline-black/10 dark:outline-white/10 hover:outline-[3px] hover:outline-offset-[-3px] transition-[outline-width,outline-offset] duration-75 ${
-    typeof theme === 'object'
+    randomTheme 
       ? 'bg-[var(--secondary-color)]'
-      : theme === "dark" 
+      : isDark 
         ? "bg-[#222222]" 
         : "bg-[#f4f4f4]"
   }`;
@@ -50,9 +59,9 @@ const Index = () => {
     <TooltipProvider delayDuration={0}>
       <main 
         className={`min-h-screen p-8 md:p-16 flex items-center transition-colors duration-300 ${
-          typeof theme === 'object'
+          randomTheme
             ? 'bg-[var(--primary-color)] text-[var(--text-color)]'
-            : theme === "dark" 
+            : isDark 
               ? "bg-[#111111] text-white" 
               : "bg-white text-black"
         }`}
@@ -62,25 +71,31 @@ const Index = () => {
             {/* Mobile Layout - All sections stacked */}
             <div className="block md:hidden space-y-1 max-w-sm mx-auto">
               <div className="h-[17.2rem]">
-                <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                <NameSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
               </div>
               <div className="h-[17.2rem]">
-                <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                <AboutSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
               </div>
               <div className="h-[8.5rem]">
-                <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                <ProjectsSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
               </div>
               <div className="h-[8.5rem]">
-                <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                <BlogSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
               </div>
               <div className="h-[8.5rem]">
-                <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                <ContactSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
               </div>
               <div className="h-[8.5rem]">
-                <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                <ExperienceSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
               </div>
               <div className="h-[8.5rem]">
-                <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
+                <ThemeSection 
+                  isDark={isDark}
+                  setIsDark={setIsDark}
+                  randomTheme={randomTheme}
+                  setRandomTheme={setRandomTheme}
+                  boxClasses={`${boxClasses} h-full`}
+                />
               </div>
             </div>
 
@@ -89,10 +104,10 @@ const Index = () => {
               {/* Top Row */}
               <div className="flex gap-1">
                 <div className="h-[17.2rem] w-[17.2rem]">
-                  <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                  <NameSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
                 </div>
                 <div className="h-[17.2rem] w-[17.2rem]">
-                  <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                  <AboutSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
                 </div>
               </div>
 
@@ -100,24 +115,30 @@ const Index = () => {
               <div className="mt-1 flex">
                 <div className="relative">
                   <div className="h-[8.5rem] w-[17.2rem]">
-                    <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                    <BlogSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
                   </div>
                   <div className="absolute left-0 top-0 -translate-x-[calc(100%+0.25rem)] w-[17.2rem] h-[8.5rem]">
-                    <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                    <ProjectsSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
                   </div>
                 </div>
                 <div className="ml-1 w-[34.4rem] h-[8.5rem]">
-                  <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                  <ContactSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
                 </div>
               </div>
 
               {/* Bottom Row - Experience and Theme */}
               <div className="mt-1 flex gap-1">
                 <div className="w-[34.4rem] h-[8.5rem]">
-                  <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
+                  <ExperienceSection theme={isDark ? "dark" : "light"} boxClasses={`${boxClasses} h-full`} />
                 </div>
                 <div className="h-[8.5rem] w-[17.2rem]">
-                  <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
+                  <ThemeSection 
+                    isDark={isDark}
+                    setIsDark={setIsDark}
+                    randomTheme={randomTheme}
+                    setRandomTheme={setRandomTheme}
+                    boxClasses={`${boxClasses} h-full`}
+                  />
                 </div>
               </div>
             </div>
