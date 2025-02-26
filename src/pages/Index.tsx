@@ -41,10 +41,10 @@ const Index = () => {
           <div className="relative w-full max-w-4xl space-y-2">
             {/* Top Row */}
             <div className="flex gap-2">
-              <div className="h-[250px] w-[250px]">
+              <div className="h-[300px] w-[300px]">
                 <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
-              <div className="h-[250px] w-[250px]">
+              <div className="h-[300px] w-[300px]">
                 <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
             </div>
@@ -52,24 +52,24 @@ const Index = () => {
             {/* Middle Row - Projects, Blog and Contact */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
               <div className="relative md:col-span-1">
-                <div className="h-[135px]">
+                <div className="h-[300px]">
                   <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
-                <div className="absolute left-0 top-0 -translate-x-[calc(100%+8px)] w-full h-[135px] hidden md:block">
+                <div className="absolute left-0 top-0 -translate-x-[calc(100%+8px)] w-full h-[300px] hidden md:block">
                   <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
               </div>
-              <div className="col-span-1 md:col-span-2 h-[135px]">
+              <div className="col-span-1 md:col-span-2 h-[300px]">
                 <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
             </div>
 
             {/* Bottom Row - Experience and Theme */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-              <div className="col-span-2 h-[135px]">
+              <div className="col-span-2 h-[300px]">
                 <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
-              <div className="h-[135px]">
+              <div className="h-[300px]">
                 <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
               </div>
             </div>
