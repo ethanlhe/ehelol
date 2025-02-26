@@ -91,11 +91,11 @@ const Index = () => {
               </div>
 
               {/* Bottom Row - Experience and Theme */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-1">
-                <div className="col-span-2 h-[135px]">
+              <div className="mt-1 flex gap-1">
+                <div className="flex-1 h-[135px]">
                   <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
-                <div className="h-[135px] w-[275px]">
+                <div className="h-[135px] flex-1">
                   <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
                 </div>
               </div>
