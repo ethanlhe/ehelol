@@ -1,37 +1,55 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 
 const ProjectPreview = () => (
-  <div className="w-64 p-3 space-y-3">
-    <div className="grid grid-cols-2 gap-2">
-      <img 
-        src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-        alt="AI Chat Application"
-        className="w-full h-20 object-cover rounded"
-        loading="eager"
-      />
-      <img 
-        src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-        alt="E-commerce Platform"
-        className="w-full h-20 object-cover rounded"
-        loading="eager"
-      />
+  <div className="w-80 p-4 space-y-4">
+    <div className="grid grid-cols-2 gap-4">
+      <div className="space-y-2">
+        <img 
+          src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+          alt="AI Chat Application"
+          className="w-full h-24 object-cover rounded-lg shadow-md"
+          loading="eager"
+        />
+        <div>
+          <h3 className="text-sm font-mono font-medium">AI Chat</h3>
+          <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Real-time AI conversations</p>
+        </div>
+      </div>
+      <div className="space-y-2">
+        <img 
+          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+          alt="E-commerce Platform"
+          className="w-full h-24 object-cover rounded-lg shadow-md"
+          loading="eager"
+        />
+        <div>
+          <h3 className="text-sm font-mono font-medium">E-commerce</h3>
+          <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Modern shopping platform</p>
+        </div>
+      </div>
     </div>
-    <p className="text-xs font-mono text-center">hover to preview projects</p>
+    <p className="text-xs font-mono text-center text-gray-500 dark:text-gray-400">hover to preview projects</p>
   </div>
 );
 
-const ExperienceItem = ({ company, description, index }: { company: string; description: string; index: number }) => {
-  const isBottomRow = index >= 2; // For 2x2 grid, bottom row starts at index 2
+const ExperienceItem = ({ company, description, index, link }: { company: string; description: string; index: number; link: string }) => {
+  const isBottomRow = index >= 2;
 
   return (
     <Tooltip delayDuration={0}>
       <TooltipTrigger asChild>
-        <button className="py-2 px-4 rounded font-mono text-sm bg-white hover:bg-gray-100 dark:bg-[#333333] dark:hover:bg-[#444444] transition-colors">
+        <a 
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="py-2 px-4 rounded font-mono text-sm bg-white hover:bg-gray-100 dark:bg-[#333333] dark:hover:bg-[#444444] transition-colors block text-center"
+        >
           {company}
-        </button>
+        </a>
       </TooltipTrigger>
       <TooltipContent 
         side={isBottomRow ? "bottom" : "top"}
@@ -78,19 +96,23 @@ const Index = () => {
   const experiences = [
     {
       company: "render",
-      description: "Led development of cloud infrastructure monitoring tools and improved system reliability by 40%"
+      description: "Led development of cloud infrastructure monitoring tools and improved system reliability by 40%",
+      link: "https://render.com/"
     },
     {
       company: "vimbly",
-      description: "Developed booking platform features and integrated payment processing systems"
+      description: "Developed booking platform features and integrated payment processing systems",
+      link: "https://www.vimblygroup.com/"
     },
     {
       company: "codelab",
-      description: "Built educational platform features and mentored junior developers"
+      description: "Built educational platform features and mentored junior developers",
+      link: "https://www.codelabdavis.com/"
     },
     {
       company: "castle hill",
-      description: "Implemented financial data visualization tools and automated reporting systems"
+      description: "Implemented financial data visualization tools and automated reporting systems",
+      link: "https://www.castlehilltech.com/"
     }
   ];
 
@@ -174,7 +196,8 @@ const Index = () => {
                   <ExperienceItem 
                     key={index} 
                     company={exp.company} 
-                    description={exp.description} 
+                    description={exp.description}
+                    link={exp.link}
                     index={index}
                   />
                 ))}
