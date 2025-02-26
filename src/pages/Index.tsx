@@ -1,26 +1,27 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 
 const ProjectPreview = () => (
-  <div className="w-80 p-4 space-y-4">
-    <div className="grid grid-cols-2 gap-4">
+  <div className="w-[400px] p-6 space-y-6 backdrop-blur-sm rounded-lg">
+    <div className="grid grid-cols-2 gap-6">
       <a 
         href="https://github.com/ethanlhe/ai-chat"
         target="_blank"
         rel="noopener noreferrer" 
-        className="space-y-2 block hover:opacity-90 transition-opacity"
+        className="group space-y-3 block"
       >
-        <img 
-          src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-          alt="AI Chat Application"
-          className="w-full h-24 object-cover rounded-lg shadow-md"
-          loading="eager"
-        />
+        <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
+          <img 
+            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+            alt="AI Chat Application"
+            className="w-full h-32 object-cover transform transition-transform group-hover:scale-110"
+            loading="eager"
+          />
+        </div>
         <div>
-          <h3 className="text-sm font-mono font-medium">AI Chat</h3>
+          <h3 className="text-sm font-mono font-medium group-hover:text-blue-400 transition-colors">AI Chat</h3>
           <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Real-time AI conversations</p>
         </div>
       </a>
@@ -28,16 +29,18 @@ const ProjectPreview = () => (
         href="https://github.com/ethanlhe/e-commerce"
         target="_blank"
         rel="noopener noreferrer"
-        className="space-y-2 block hover:opacity-90 transition-opacity"
+        className="group space-y-3 block"
       >
-        <img 
-          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-          alt="E-commerce Platform"
-          className="w-full h-24 object-cover rounded-lg shadow-md"
-          loading="eager"
-        />
+        <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
+          <img 
+            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+            alt="E-commerce Platform"
+            className="w-full h-32 object-cover transform transition-transform group-hover:scale-110"
+            loading="eager"
+          />
+        </div>
         <div>
-          <h3 className="text-sm font-mono font-medium">E-commerce</h3>
+          <h3 className="text-sm font-mono font-medium group-hover:text-blue-400 transition-colors">E-commerce</h3>
           <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Modern shopping platform</p>
         </div>
       </a>
@@ -160,8 +163,8 @@ const Index = () => {
                 </TooltipTrigger>
                 <TooltipContent 
                   side="left" 
-                  sideOffset={20}
-                  className="bg-white dark:bg-[#222222] border-none z-[9999]"
+                  sideOffset={40}
+                  className="bg-white/80 dark:bg-black/80 backdrop-blur-md border-none z-[9999] shadow-xl animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
                 >
                   <ProjectPreview />
                 </TooltipContent>
