@@ -1,3 +1,6 @@
+
+import { DiceIcon, RotateCcwIcon } from "lucide-react";
+
 interface ThemeSectionProps {
   isDark: boolean;
   setIsDark: (isDark: boolean) => void;
@@ -113,6 +116,10 @@ export const ThemeSection = ({ isDark, setIsDark, randomTheme, setRandomTheme, b
     }
   };
 
+  const handleReset = () => {
+    setRandomTheme(null);
+  };
+
   return (
     <div className={`${boxClasses} flex flex-col justify-between`}>
       <span className="font-mono mb-4">theme</span>
@@ -139,18 +146,32 @@ export const ThemeSection = ({ isDark, setIsDark, randomTheme, setRandomTheme, b
             dark
           </button>
         </div>
-        <button
-          onClick={handleRandomTheme}
-          className={`py-3 px-6 rounded-lg font-mono text-base transition-all duration-300 text-center w-full 
-            ${randomTheme
-              ? 'bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90 scale-100 hover:scale-[1.02]'
-              : 'bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:opacity-90'
-            }
-            transform hover:shadow-lg active:scale-95
-          `}
-        >
-          {randomTheme ? 'new colors' : 'random'}
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={handleRandomTheme}
+            className={`py-3 px-6 rounded-lg font-mono text-base transition-all duration-150 text-center flex-1 flex items-center justify-center gap-2
+              ${randomTheme
+                ? 'bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90'
+                : 'bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:opacity-90'
+              }
+              transform hover:scale-[1.02] active:scale-95
+            `}
+          >
+            <DiceIcon className="w-4 h-4" />
+            <span>random</span>
+          </button>
+          {randomTheme && (
+            <button
+              onClick={handleReset}
+              className="py-3 px-4 rounded-lg font-mono text-base transition-all duration-150
+                bg-[var(--text-color)] text-[var(--primary-color)] hover:opacity-90
+                transform hover:scale-[1.02] active:scale-95"
+              title="Reset to default theme"
+            >
+              <RotateCcwIcon className="w-4 h-4" />
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
