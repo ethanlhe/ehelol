@@ -41,37 +41,37 @@ const Index = () => {
           <div className="w-full md:w-auto space-y-1">
             {/* Mobile Layout - All sections stacked */}
             <div className="block md:hidden space-y-1 max-w-sm mx-auto">
-              <div className="h-[275px]">
+              <div className="h-[17.2rem]">
                 <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
-              <div className="h-[275px]">
+              <div className="h-[17.2rem]">
                 <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
-              <div className="h-[135px]">
+              <div className="h-[8.5rem]">
                 <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
-              <div className="h-[135px]">
+              <div className="h-[8.5rem]">
                 <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
-              <div className="h-[135px]">
+              <div className="h-[8.5rem]">
                 <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
-              <div className="h-[135px]">
+              <div className="h-[8.5rem]">
                 <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
               </div>
-              <div className="h-[135px]">
+              <div className="h-[8.5rem]">
                 <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
               </div>
             </div>
 
             {/* Desktop Layout - Original asymmetric design */}
-            <div className="hidden md:block relative w-full max-w-4xl" style={{ marginLeft: "160px" }}>
+            <div className="hidden md:block relative w-full max-w-[64rem]" style={{ marginLeft: "10rem" }}>
               {/* Top Row */}
               <div className="flex gap-1">
-                <div className="h-[275px] w-[275px]">
+                <div className="h-[17.2rem] w-[17.2rem]">
                   <NameSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
-                <div className="h-[275px] w-[275px]">
+                <div className="h-[17.2rem] w-[17.2rem]">
                   <AboutSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
               </div>
@@ -79,24 +79,24 @@ const Index = () => {
               {/* Middle Row - Projects, Blog and Contact */}
               <div className="mt-1 flex">
                 <div className="relative">
-                  <div className="h-[135px] w-[275px]">
+                  <div className="h-[8.5rem] w-[17.2rem]">
                     <BlogSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                   </div>
-                  <div className="absolute left-0 top-0 -translate-x-[calc(100%+4px)] w-[275px] h-[135px]">
+                  <div className="absolute left-0 top-0 -translate-x-[calc(100%+0.25rem)] w-[17.2rem] h-[8.5rem]">
                     <ProjectsSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                   </div>
                 </div>
-                <div className="ml-1 w-[550px] h-[135px]">
+                <div className="ml-1 w-[34.4rem] h-[8.5rem]">
                   <ContactSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
               </div>
 
               {/* Bottom Row - Experience and Theme */}
               <div className="mt-1 flex gap-1">
-                <div className="w-[550px] h-[135px]">
+                <div className="w-[34.4rem] h-[8.5rem]">
                   <ExperienceSection theme={theme} boxClasses={`${boxClasses} h-full`} />
                 </div>
-                <div className="h-[135px] w-[275px]">
+                <div className="h-[8.5rem] w-[17.2rem]">
                   <ThemeSection theme={theme} boxClasses={`${boxClasses} h-full`} setTheme={setTheme} />
                 </div>
               </div>
