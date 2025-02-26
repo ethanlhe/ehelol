@@ -86,7 +86,11 @@ const Index = () => {
                   view
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="left" className="bg-white dark:bg-[#222222] border-none">
+              <TooltipContent 
+                side="left" 
+                sideOffset={20}
+                className="bg-white dark:bg-[#222222] border-none"
+              >
                 <ProjectPreview />
               </TooltipContent>
             </Tooltip>
