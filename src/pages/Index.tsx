@@ -40,19 +40,21 @@ const Index = () => {
       document.documentElement.style.setProperty('--primary-color', randomTheme.primary);
       document.documentElement.style.setProperty('--secondary-color', randomTheme.secondary);
       document.documentElement.style.setProperty('--text-color', randomTheme.text);
+      document.documentElement.style.setProperty('--foreground-color', randomTheme.text);
     } else {
       document.documentElement.style.removeProperty('--primary-color');
       document.documentElement.style.removeProperty('--secondary-color');
       document.documentElement.style.removeProperty('--text-color');
+      document.documentElement.style.removeProperty('--foreground-color');
     }
   }, [isDark, randomTheme]);
 
   const boxClasses = `p-3 rounded-lg outline outline-0 outline-black/10 dark:outline-white/10 hover:outline-[3px] hover:outline-offset-[-3px] transition-[outline-width,outline-offset] duration-75 ${
     randomTheme 
-      ? 'bg-[var(--secondary-color)]'
+      ? 'bg-[var(--secondary-color)] text-[var(--text-color)]'
       : isDark 
-        ? "bg-[#222222]" 
-        : "bg-[#f4f4f4]"
+        ? "bg-[#222222] text-white" 
+        : "bg-[#f4f4f4] text-black"
   }`;
 
   return (

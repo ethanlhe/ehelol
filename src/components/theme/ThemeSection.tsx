@@ -9,66 +9,66 @@ interface ThemeSectionProps {
   boxClasses: string;
 }
 
-// Predefined harmonious color schemes with improved dark mode contrast
+// Predefined color schemes using HSL for better color relationships
 const colorSchemes = [
   {
     light: {
-      primary: "#F8F9FA",
-      secondary: "#E9ECEF",
-      text: "#212529"
+      primary: "hsl(210, 20%, 98%)",
+      secondary: "hsl(210, 20%, 93%)",
+      text: "hsl(210, 20%, 15%)"
     },
     dark: {
-      primary: "#1A1F2C",
-      secondary: "#2A303C",
-      text: "#F8F9FA"
+      primary: "hsl(210, 20%, 15%)",
+      secondary: "hsl(210, 20%, 20%)",
+      text: "hsl(210, 20%, 98%)"
     }
   },
   {
     light: {
-      primary: "#E9D8FD",
-      secondary: "#D6BCFA",
-      text: "#44337A"
+      primary: "hsl(280, 100%, 95%)",
+      secondary: "hsl(280, 100%, 90%)",
+      text: "hsl(280, 60%, 25%)"
     },
     dark: {
-      primary: "#322659",
-      secondary: "#44337A",
-      text: "#E9D8FD"
+      primary: "hsl(280, 60%, 25%)",
+      secondary: "hsl(280, 60%, 30%)",
+      text: "hsl(280, 100%, 95%)"
     }
   },
   {
     light: {
-      primary: "#E6FCF5",
-      secondary: "#C3FAE8",
-      text: "#087F5B"
+      primary: "hsl(160, 80%, 95%)",
+      secondary: "hsl(160, 80%, 90%)",
+      text: "hsl(160, 80%, 20%)"
     },
     dark: {
-      primary: "#065F46",
-      secondary: "#047857",
-      text: "#ECFDF5"
+      primary: "hsl(160, 80%, 20%)",
+      secondary: "hsl(160, 80%, 25%)",
+      text: "hsl(160, 80%, 95%)"
     }
   },
   {
     light: {
-      primary: "#FFF3BF",
-      secondary: "#FFE066",
-      text: "#744210"
+      primary: "hsl(45, 100%, 95%)",
+      secondary: "hsl(45, 100%, 90%)",
+      text: "hsl(45, 100%, 20%)"
     },
     dark: {
-      primary: "#633112",
-      secondary: "#854D0E",
-      text: "#FEF9C3"
+      primary: "hsl(45, 100%, 20%)",
+      secondary: "hsl(45, 100%, 25%)",
+      text: "hsl(45, 100%, 95%)"
     }
   },
   {
     light: {
-      primary: "#EBF4FF",
-      secondary: "#C3DAFE",
-      text: "#3C366B"
+      primary: "hsl(220, 100%, 95%)",
+      secondary: "hsl(220, 100%, 90%)",
+      text: "hsl(220, 100%, 20%)"
     },
     dark: {
-      primary: "#312E81",
-      secondary: "#3730A3",
-      text: "#E0E7FF"
+      primary: "hsl(220, 100%, 20%)",
+      secondary: "hsl(220, 100%, 25%)",
+      text: "hsl(220, 100%, 95%)"
     }
   }
 ];
