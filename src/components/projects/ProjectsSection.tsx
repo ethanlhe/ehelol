@@ -1,7 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import blockscienceImg from '../../../public/images/blockscience.png';
+import espressoImg from '../../../public/images/espresso.png';
 import renderImg from '../../../public/images/render.png';
 import { render } from "react-dom";
 
@@ -22,7 +22,7 @@ const ProjectPreview = () => (
         <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
           <img 
             src={renderImg}
-            alt="AI Chatbot"
+            alt="Render: Dev Tools"
             className="w-full h-24 object-cover transform transition-transform group-hover:scale-110"
             loading="eager"
           />
@@ -40,15 +40,15 @@ const ProjectPreview = () => (
       >
         <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
           <img 
-            src={blockscienceImg}
-            alt="BlockScience Labs Subway Map"
+            src={espressoImg}
+            alt="Espresso: Interactive Learning Tool"
             className="w-full h-24 object-cover transform transition-transform group-hover:scale-110"
             loading="eager"
           />
         </div>
         <div>
-          <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">Subway Map</h3>
-          <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Git visualization tool</p>
+          <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">Espresso</h3>
+          <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Interactive learning tool</p>
         </div>
       </a>
     </div>

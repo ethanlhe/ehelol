@@ -3,17 +3,26 @@ import { useNavigate } from "react-router-dom";
 import blockscienceImg from '../../public/images/blockscience.png';
 import scheduleMapImg from '../../public/images/schedulemap.png';
 import renderImg from '../../public/images/render.png';
+import espressoImg from '../../public/images/espresso.png';
+import parserPalImg from '../../public/images/parserpal.png';
 
 const Portfolio = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   
   const projects = [
     {
       title: "Render Dev Tools",
       description: "Built a scalable chatbot frontend with Next.js and FastAPI for session management. Developed a VS Code extension with real-time log streaming via WebSockets, enhancing debugging efficiency. Contributed to an AI chatbot using RAG with Postgraphile and PG Vector to streamline user onboarding.",
       tech: ["React", "Next.js", "PostgreSQL", "FastAPI", "WebSockets", "PG Vector"],
-      link: "https://github.com/ethanlhe",
+      link: "https://codelabdavis.medium.com/render-39a27b197593",
       image: renderImg
+    },
+    {
+      title: "Espresso",
+      description: "Mentored the development of an interactive learning platform that blends Quizlet’s simplicity with Anki’s spaced repetition system. Built with Next.js and Express.js, it features customizable study decks, progress tracking, and collaborative sharing to enhance student learning.",
+      tech: ["Next.js", "React", "Express.js", "PostgreSQL", "TypeScript"],
+      link: "https://codelabdavis.medium.com/espresso-7b58e3b6b485",
+      image: espressoImg
     },
     {
       title: "BlockScience Labs Subway Map",
@@ -23,13 +32,21 @@ const Portfolio = () => {
       image: blockscienceImg
     },
     {
+      title: "ParserPal",
+      description: "Guided the team in building a resume parsing tool designed to help students optimize their resumes with AI-generated feedback. Using React and Express.js, the platform extracts key information, evaluates ATS compatibility, and offers content improvement suggestions.",
+      tech: ["React", "Express.js", "TypeScript", "MongoDB", "ChatGPT API"],
+      link: "https://codelabdavis.medium.com/parserpal-5b59eb7ef4a1",
+      image: parserPalImg
+    },
+    {
       title: "Schedule Map",
       description: "Developed a Google Chrome extension that helps UC Davis students visualize their class locations on an interactive map, displaying travel times between classes using various transportation modes. Features include dynamic markers, real-time distance calculations, and course time conflict warnings.",
       tech: ["React", "Google Maps API", "Chrome Extension", "Distance Matrix API", "Geolocation API"],
       link: "https://codelabdavis.medium.com/schedule-map-5b59eb7ef4a1",
       image: scheduleMapImg
     }
-  ];
+];
+
 
   return (
     <main className="min-h-screen p-8 md:p-16 bg-white dark:bg-[#111111] text-black dark:text-white transition-colors duration-300">

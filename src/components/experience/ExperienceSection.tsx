@@ -66,7 +66,7 @@ export const ExperienceSection = ({ theme, boxClasses }: ExperienceSectionProps)
     <div className={boxClasses}>
       <div className="flex items-center justify-between mb-4">
         <span className="font-mono">experience</span>
-        <span className={`text-sm font-mono ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>2+ years</span>
+        <span className={`text-sm font-mono ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>4+ years</span>
       </div>
       <div className="grid grid-cols-2 gap-2">
         {experiences.map((exp, index) => (
