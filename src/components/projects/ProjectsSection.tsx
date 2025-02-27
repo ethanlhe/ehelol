@@ -1,6 +1,9 @@
 
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import blockscienceImg from '../../../public/images/blockscience.png';
+import renderImg from '../../../public/images/render.png';
+import { render } from "react-dom";
 
 interface ProjectsSectionProps {
   theme: "light" | "dark";
@@ -10,6 +13,25 @@ interface ProjectsSectionProps {
 const ProjectPreview = () => (
   <div className="w-[300px] p-4 space-y-4 backdrop-blur-sm rounded-lg">
     <div className="grid grid-cols-2 gap-4">
+    <a 
+        href="https://codelabdavis.medium.com/render-39a27b197593"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group space-y-2 block"
+      >
+        <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
+          <img 
+            src={renderImg}
+            alt="AI Chatbot"
+            className="w-full h-24 object-cover transform transition-transform group-hover:scale-110"
+            loading="eager"
+          />
+        </div>
+        <div>
+          <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">Render Dev Tools</h3>
+          <p className="text-xs font-mono text-gray-600 dark:text-gray-400">AI chatbot + VSCode extensions</p>
+        </div>
+      </a>
       <a 
         href="https://codelabdavis.medium.com/blockscience-labs-subway-map-7b58e3b6b485"
         target="_blank"
@@ -18,7 +40,7 @@ const ProjectPreview = () => (
       >
         <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
           <img 
-            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+            src={blockscienceImg}
             alt="BlockScience Labs Subway Map"
             className="w-full h-24 object-cover transform transition-transform group-hover:scale-110"
             loading="eager"
@@ -27,25 +49,6 @@ const ProjectPreview = () => (
         <div>
           <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">Subway Map</h3>
           <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Git visualization tool</p>
-        </div>
-      </a>
-      <a 
-        href="https://codelabdavis.medium.com/schedule-map-5b59eb7ef4a1"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group space-y-2 block"
-      >
-        <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
-          <img 
-            src="https://images.unsplash.com/photo-1518005020951-eccb494ad742"
-            alt="Schedule Map"
-            className="w-full h-24 object-cover transform transition-transform group-hover:scale-110"
-            loading="eager"
-          />
-        </div>
-        <div>
-          <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">Schedule Map</h3>
-          <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Class location visualizer</p>
         </div>
       </a>
     </div>
