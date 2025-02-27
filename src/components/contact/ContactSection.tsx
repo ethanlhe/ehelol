@@ -35,7 +35,7 @@ export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
           linkedin
         </a>
         <a
-          href="https://github.com/ethanniser"
+          href="https://github.com/ethanlhe"
           target="_blank"
           rel="noopener noreferrer"
           className={buttonClasses}
