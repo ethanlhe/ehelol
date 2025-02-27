@@ -7,7 +7,7 @@ export const BlogSection = ({ theme, boxClasses }: BlogSectionProps) => {
   return (
     <div className={`${boxClasses} flex flex-col justify-between`}>
       <div className="flex items-center justify-between mb-4">
-        <span className="font-mono">blog</span>
+        <span className="font-mono box-title">blog</span>
         <span className={`font-mono text-xs px-2 py-1 rounded ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>soon</span>
       </div>
       <button 

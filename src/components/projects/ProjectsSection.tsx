@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import espressoImg from '../../../public/images/espresso.png';
@@ -62,7 +61,7 @@ export const ProjectsSection = ({ theme, boxClasses }: ProjectsSectionProps) => 
   return (
     <div className={`${boxClasses} flex flex-col justify-between`}>
       <div className="flex items-center justify-between">
-        <span className="font-mono">projects</span>
+        <span className="font-mono box-title">projects</span>
         <span className={`font-mono text-xs px-2 py-1 rounded-lg ${theme === "dark" ? "bg-[#333333]" : "bg-white"}`}>new</span>
       </div>
       <Tooltip>
