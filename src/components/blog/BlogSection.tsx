@@ -1,4 +1,3 @@
-
 interface BlogSectionProps {
   theme: "light" | "dark";
   boxClasses: string;
@@ -15,7 +14,7 @@ export const BlogSection = ({ theme, boxClasses }: BlogSectionProps) => {
         disabled
         className={`w-full py-2 px-4 rounded font-mono text-sm ${
           theme === "dark" ? "bg-[#333333]" : "bg-white"
-        } transition-colors opacity-50 cursor-not-allowed`}
+        } transition-colors duration-0 opacity-50 cursor-not-allowed`}
       >
         read
       </button>
