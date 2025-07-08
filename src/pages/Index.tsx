@@ -1,6 +1,7 @@
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { useTheme } from "@/context/ThemeContext";
 import { NameSection } from "@/components/layout/NameSection";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
 import { BlogSection } from "@/components/blog/BlogSection";
@@ -10,7 +11,7 @@ import { ContactSection } from "@/components/contact/ContactSection";
 import { ThemeSection } from "@/components/theme/ThemeSection";
 
 const Index = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const images = [
@@ -22,13 +23,7 @@ const Index = () => {
       const img = new Image();
       img.src = src;
     });
-
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
+  }, []);
 
   const boxClasses = `p-3 rounded-lg outline outline-0 outline-black/10 dark:outline-white/10 hover:outline-[3px] hover:outline-offset-[-3px] transition-[outline-width,outline-offset] duration-75 ${
     theme === "dark" ? "bg-[#222222]" : "bg-[#f4f4f4]"

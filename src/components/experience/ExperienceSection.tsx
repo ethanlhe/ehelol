@@ -1,4 +1,5 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { useNavigate } from "react-router-dom";
 
 interface ExperienceItemProps {
   company: string;
@@ -9,14 +10,24 @@ interface ExperienceItemProps {
 
 const ExperienceItem = ({ company, description, index, link }: ExperienceItemProps) => {
   const isBottomRow = index >= 2;
+  const navigate = useNavigate();
+  const isInternalLink = link.startsWith('/');
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (isInternalLink) {
+      e.preventDefault();
+      navigate(link);
+    }
+  };
 
   return (
     <Tooltip delayDuration={0}>
       <TooltipTrigger asChild>
         <a 
           href={link}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={isInternalLink ? undefined : "_blank"}
+          rel={isInternalLink ? undefined : "noopener noreferrer"}
+          onClick={handleClick}
           className="py-1.5 px-4 rounded-lg font-mono text-sm bg-white hover:bg-gray-100 dark:bg-[#333333] dark:hover:bg-[#444444] transition-colors duration-0 block text-center"
         >
           {company}
@@ -52,7 +63,7 @@ const experiences = [
   {
     company: "codelab",
     description: "Built educational platform features and mentored junior developers",
-    link: "https://www.codelabdavis.com/"
+    link: "/codelab"
   },
   {
     company: "castle hill",

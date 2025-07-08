@@ -1,5 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "@/context/ThemeContext";
 import blockscienceImg from '../../public/images/blockscience.png';
 import scheduleMapImg from '../../public/images/schedulemap.png';
 import renderImg from '../../public/images/render.png';
@@ -7,7 +8,8 @@ import espressoImg from '../../public/images/espresso.png';
 import parserPalImg from '../../public/images/parserpal.png';
 
 const Portfolio = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const { theme } = useTheme(); 
   
   const projects = [
     {
