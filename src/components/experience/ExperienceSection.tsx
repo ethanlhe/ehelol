@@ -53,7 +53,7 @@ const experiences = [
   {
     company: "reddit",
     description: "Led the development of a live MLB scoreboard app for Reddit’s r/MLB using Devvit and SportsRadar, delivering real-time scores, stats, and interactive features to millions of fans.",
-    link: "https://codelabdavis.medium.com/reddit-1f13d47def2f"
+    link: "https://redditinc.com/"
   },
   {
     company: "render",

@@ -14,7 +14,7 @@ const ProjectPreview = () => (
   <div className="w-[300px] p-4 space-y-4 backdrop-blur-sm rounded-lg">
     <div className="grid grid-cols-2 gap-4">
       <a 
-        href="https://medium.com/@codelabdavis/reddit-mlb-scoreboards-spring-25-client-project-article-link" // Replace with actual Medium article link
+        href="https://codelabdavis.medium.com/reddit-1f13d47def2f" // Replace with actual Medium article link
         target="_blank"
         rel="noopener noreferrer"
         className="group space-y-2 block"
