@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import espressoImg from '../../../public/images/espresso.png';
 import renderImg from '../../../public/images/render.png';
+import redditImg from '../../../public/images/reddit.png';
 import { render } from "react-dom";
 
 interface ProjectsSectionProps {
@@ -12,7 +13,28 @@ interface ProjectsSectionProps {
 const ProjectPreview = () => (
   <div className="w-[300px] p-4 space-y-4 backdrop-blur-sm rounded-lg">
     <div className="grid grid-cols-2 gap-4">
-    <a 
+      <a 
+        href="https://medium.com/@codelabdavis/reddit-mlb-scoreboards-spring-25-client-project-article-link" // Replace with actual Medium article link
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group space-y-2 block"
+      >
+        <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
+          <img 
+            src={redditImg}
+            alt="Reddit MLB Scoreboards"
+            className="w-full h-24 object-cover transform transition-transform group-hover:scale-110"
+            loading="eager"
+          />
+        </div>
+        <div>
+          <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">Reddit MLB</h3>
+          <p className="text-xs font-mono text-gray-600 dark:text-gray-400">
+            Live MLB scoreboard for Reddit’s r/MLB
+          </p>
+        </div>
+      </a>
+      <a 
         href="https://codelabdavis.medium.com/render-39a27b197593"
         target="_blank"
         rel="noopener noreferrer"
@@ -29,25 +51,6 @@ const ProjectPreview = () => (
         <div>
           <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">Render Dev Tools</h3>
           <p className="text-xs font-mono text-gray-600 dark:text-gray-400">AI chatbot + VSCode extensions</p>
-        </div>
-      </a>
-      <a 
-        href="https://codelabdavis.medium.com/blockscience-labs-subway-map-7b58e3b6b485"
-        target="_blank"
-        rel="noopener noreferrer" 
-        className="group space-y-2 block"
-      >
-        <div className="overflow-hidden rounded-lg ring-1 ring-white/10">
-          <img 
-            src={espressoImg}
-            alt="Espresso: Interactive Learning Tool"
-            className="w-full h-24 object-cover transform transition-transform group-hover:scale-110"
-            loading="eager"
-          />
-        </div>
-        <div>
-          <h3 className="text-sm font-mono font-medium group-hover:text-[#4AFF4A] transition-colors">Espresso</h3>
-          <p className="text-xs font-mono text-gray-600 dark:text-gray-400">Interactive learning tool</p>
         </div>
       </a>
     </div>

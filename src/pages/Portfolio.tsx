@@ -6,12 +6,20 @@ import scheduleMapImg from '../../public/images/schedulemap.png';
 import renderImg from '../../public/images/render.png';
 import espressoImg from '../../public/images/espresso.png';
 import parserPalImg from '../../public/images/parserpal.png';
+import redditImg from '../../public/images/reddit.png';
 
 const Portfolio = () => {
   const navigate = useNavigate();
   const { theme } = useTheme(); 
   
   const projects = [
+    {
+      title: "Reddit MLB Scoreboards",
+      description: "Designed and shipped a live MLB scoreboard for Reddit’s r/MLB using Devvit and SportsRadar, enabling real-time scores, stats, and interactive features for millions of fans. Built a drag-and-drop moderator dashboard and tackled real-time data, platform constraints, and community-driven UX.",
+      tech: ["TypeScript", "Devvit", "SportsRadar", "Next.js", "Redis", "Websockets"],
+      link: "https://medium.com/@codelabdavis/reddit-mlb-scoreboards-spring-25-client-project-article-link", // Replace with actual Medium article link
+      image: redditImg
+    },
     {
       title: "Render Dev Tools",
       description: "Built a scalable chatbot frontend with Next.js and FastAPI for session management. Developed a VS Code extension with real-time log streaming via WebSockets, enhancing debugging efficiency. Contributed to an AI chatbot using RAG with Postgraphile and PG Vector to streamline user onboarding.",

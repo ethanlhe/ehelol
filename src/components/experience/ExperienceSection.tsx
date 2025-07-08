@@ -51,6 +51,11 @@ interface ExperienceSectionProps {
 
 const experiences = [
   {
+    company: "reddit",
+    description: "Led the development of a live MLB scoreboard app for Reddit’s r/MLB using Devvit and SportsRadar, delivering real-time scores, stats, and interactive features to millions of fans.",
+    link: "https://codelabdavis.medium.com/reddit-1f13d47def2f"
+  },
+  {
     company: "render",
     description: "Led development of cloud infrastructure monitoring tools and improved system reliability by 40%",
     link: "https://render.com/"
@@ -64,11 +69,6 @@ const experiences = [
     company: "codelab",
     description: "Built educational platform features and mentored junior developers",
     link: "/codelab"
-  },
-  {
-    company: "castle hill",
-    description: "Implemented financial data visualization tools and automated reporting systems",
-    link: "https://www.castlehilltech.com/"
   }
 ];
 
