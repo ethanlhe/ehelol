@@ -1,3 +1,5 @@
+https://ethanlhe.github.io/ehelol/
+
 ## My Personal Website
 
 Follow these steps to setup:
