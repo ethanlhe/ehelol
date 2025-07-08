@@ -1,4 +1,4 @@
-import { toast } from "sonner";
+import { useState } from "react";
 
 interface ContactSectionProps {
   theme: "light" | "dark";
@@ -6,9 +6,12 @@ interface ContactSectionProps {
 }
 
 export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
+  const [copied, setCopied] = useState(false);
+
   const handleEmailClick = () => {
     navigator.clipboard.writeText("ethanhe0716@gmail.com");
-    toast.success("Email copied to clipboard!");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   const buttonClasses = `py-2 px-4 rounded-lg font-mono text-sm w-full text-center ${
@@ -23,7 +26,7 @@ export const ContactSection = ({ theme, boxClasses }: ContactSectionProps) => {
           onClick={handleEmailClick}
           className={buttonClasses}
         >
-          email
+          {copied ? "copied!" : "email"}
         </button>
         <a
           href="https://www.linkedin.com/in/ethanlhe/"
