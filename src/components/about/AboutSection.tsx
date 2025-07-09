@@ -14,7 +14,7 @@ export const AboutSection = ({ theme, boxClasses }: AboutSectionProps) => {
           </p>
         </div>
       </div>
-      <p className="font-mono box-title">davis, california based</p>
+      <p className="font-mono box-title">san francisco, california</p>
     </div>
   );
 };
