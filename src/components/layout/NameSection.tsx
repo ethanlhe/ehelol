@@ -10,7 +10,7 @@ export const NameSection = ({ boxClasses }: NameSectionProps) => {
         <h1 className="text-xl font-mono">ethan he</h1>
         <p className="text-muted-foreground font-mono box-title">software engineer</p>
       </div>
-      <p className="font-mono text-sm">be best</p>
+      <p className="font-mono text-sm">ehelol</p>
     </div>
   );
 };
