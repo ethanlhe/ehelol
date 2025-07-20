@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
 import Codelab from "./pages/Codelab";
+import FunStuff from "./pages/FunStuff";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/codelab" element={<Codelab />} />
+            <Route path="/fun-stuff" element={<FunStuff />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
