@@ -1,5 +1,6 @@
 import { useTheme } from "@/context/ThemeContext";
 import { ParticleSection } from "@/components/particles/ParticleSection";
+import ParticlePreview from "@/components/particles/ParticlePreview";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
@@ -35,13 +36,15 @@ const FunStuff = () => {
           
           {/* Three.js Particle Simulation */}
           <div 
-            className={`${boxClasses} h-80 overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-200 relative flex items-center justify-center`}
+            className={`${boxClasses} h-80 overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-200 relative`}
             onClick={() => navigate('/particle-simulation')}
           >
-            <div className="text-center">
-              <h3 className="text-lg font-semibold mb-2">Three.js Particle Simulation</h3>
-              <p className="text-sm opacity-70 mb-4">Interactive "ETHAN HE" particles with mouse controls</p>
-              <p className="text-sm text-blue-400">Click to explore →</p>
+            <ParticlePreview theme={theme} className="w-full h-full" />
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 hover:bg-opacity-20 transition-colors duration-200">
+              <div className="text-center text-white opacity-0 hover:opacity-100 transition-opacity duration-200">
+                <h3 className="text-lg font-semibold mb-2">Full Screen Particle Simulation</h3>
+                <p className="text-sm">Click to explore →</p>
+              </div>
             </div>
           </div>
           
